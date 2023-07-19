@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   controls.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/12 18:56:44 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/19 16:01:34 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 
-void	controls_part_one(t_var *v, int keycode)
+void	controls_part_one(t_mlx *v, int keycode)
 {
 	if (keycode == 1 || keycode == 46)
 		v->m = (v->m == UI_CLR) ? UI_DISABLE_CLR : UI_CLR;
@@ -40,7 +40,7 @@ void	controls_part_one(t_var *v, int keycode)
 		v->padx -= 70.;
 }
 
-void	controls_part_two(t_var *v, int keycode)
+void	controls_part_two(t_mlx *v, int keycode)
 {
 	t_hsv	hsv;
 
@@ -60,7 +60,7 @@ void	controls_part_two(t_var *v, int keycode)
 	}
 }
 
-void		reset_values(t_var *v)
+void		reset_values(t_mlx *v)
 {
 	v->e = 0;
 	v->rot = 0;

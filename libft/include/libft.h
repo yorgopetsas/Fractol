@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 13:30:40 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/06/09 15:24:17 by bsouchet         ###   ########.fr       */
+/*   Updated: 2023/07/19 16:08:02 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,11 @@ typedef struct	s_var
 	void		*img;
 	void		*mlx;
 	void		*win;
+	char		*addr;
+	int			bits_per_pixel;
+	int			line_length;
+	int			endian;
+
 }				t_var;
 
 int				ft_abs(int n);
@@ -125,7 +130,5 @@ t_percent		ft_rgb_to_percent(t_rgb rgb);
 // t_rgb			ft_hex_to_rgb(int hex);
 // int				ft_rgb_to_hex(t_rgb rgb);
 int				ft_hsv_to_hex(double h, double s, double v);
-
-void			yz_mlx_draw(t_var *v, int x, int y, int clr);
 
 #endif

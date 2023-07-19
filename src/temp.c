@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw.c                                             :+:      :+:    :+:   */
+/*   temp.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsouchet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/06/06 17:58:29 by bsouchet         ###   ########.fr       */
+/*   Updated: 2023/07/19 13:57:10 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 
-void	my_mlx_pixel_put(t_mlx *data, int x, int y, int color)
-{
-	char	*dst;
+// void	my_mlx_pixel_put(t_mlx *data, int x, int y, int color)
+// {
+// 	char	*dst;
 
-	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int *)dst = color;
-}
+// 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+// 	*(unsigned int *)dst = color;
+// }
 
 t_rgb	ft_hsv_to_rgb(t_hsv hsv)
 {

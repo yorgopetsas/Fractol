@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   frtl.c                                             :+:      :+:    :+:   */
+/*   fractals.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsouchet <bsouchet@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 13:09:02 by bsouchet          #+#    #+#             */
-/*   Updated: 2016/06/07 19:25:43 by bsouchet         ###   ########.fr       */
+/*   Updated: 2023/07/19 17:59:28 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 
-void	rotate_fractal(t_var *v, int rot)
+void	rotate_fractal(t_mlx *v, int rot)
 {
 	if (rot >= 0)
 		while (rot >= 360)
@@ -36,7 +36,7 @@ void	rotate_fractal(t_var *v, int rot)
 	v->miny = ((MID_H + v->pady) / (v->z / 2)) / -2;
 }
 
-int	edit_hue_hex(t_var *v)
+int	edit_hue_hex(t_mlx *v)
 {
 	t_hsv	hsv;
 	t_rgb	rgb;
@@ -57,10 +57,10 @@ int	edit_hue_hex(t_var *v)
 	return (ft_rgb_to_hex(rgb));
 }
 
-void	fractal_julia(t_var *v)
+void	fractal_julia(t_mlx *v)
 {
 	v->i = -1.0;
-	v->mod = 2;
+	v->mod = 1;
 	v->zr = (v->e == 0 || v->e == 2) ? (D(v->x) / v->z) + v->minx :
 	(D(v->y) / v->z) + v->miny;
 	v->zi = (v->e == 0 || v->e == 2) ? (D(v->y) / v->z) + v->miny :
@@ -78,12 +78,13 @@ void	fractal_julia(t_var *v)
 	(v->x >= (v->len - 1) && v->x <= (WW - 25) &&
 	v->y >= (HH - 65) && v->y <= (HH - 25)))
 		v->clr = ft_shade_color(v->clr, 0.35);
-	put_pixel(v, 0);
+	mlx_pixel_put(v->mlx, v->win, v->x, v->y, v->clr);
 }
 
-void			fractal_mandelbrot(t_var *v)
+void			fractal_mandelbrot(t_mlx *v)
 {
 	v->i = -2.0;
+
 	v->zr = 0.0;
 	v->zi = 0.0;
 	v->mod = (v->num == 2) ? 2 : -2;
@@ -104,5 +105,5 @@ void			fractal_mandelbrot(t_var *v)
 	(v->x >= (v->len - 1) && v->x <= (WW - 25) &&
 	v->y >= (HH - 65) && v->y <= (HH - 25)))
 		v->clr = ft_shade_color(v->clr, 0.35);
-	put_pixel(v, 0);
+	mlx_pixel_put(v->mlx, v->win, v->x, v->y, v->clr);
 }
