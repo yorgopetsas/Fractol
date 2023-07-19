@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:18:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/19 15:09:51 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/20 00:31:42 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ void	yz_mandel_calc(t_fractol *fm, t_mlx *mx)
 			unsigned n = 0;
 			man_calc_two(fm, n);
 			if (fm->isinside)
-				my_mlx_pixel_put(mx, x, y, 0x00000000);
+				yz_mlx_pixel_put(mx, x, y, 0x00000000);
 			else
-				my_mlx_pixel_put(mx, x, y, 0x00547BE8);
+				yz_mlx_pixel_put(mx, x, y, 0x00547BE8);
 			x++;
 		}
 		y++;

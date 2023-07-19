@@ -6,20 +6,20 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/19 23:11:54 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/20 01:22:28 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 
-int		expose_hook(t_mlx *v)
+int	expose_hook(t_mlx *v)
 {
 	v->img = mlx_new_image(v->mlx, WW, HH);
-	v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
-	user_interface(v);
+	v->addr = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
+	// iface(v);
 	mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
-	draw_fractal(v);
-	user_interface_texts(v);
+	yz_itr_frt(v);
+	yz_menu(v);
 	return (0);
 }
 
@@ -38,9 +38,9 @@ int	key_hook(int keycode, t_mlx *v)
 	{
 
 		if (keycode >= 1 && keycode <= 123 && ++r > 0)
-			controls_part_one(v, keycode);
+			controls(v, keycode);
 		else if (keycode >= 124 && keycode <= 258 && ++r > 0)
-			controls_part_two(v, keycode);
+			controls_two(v, keycode);
 		if (r > 0)
 		{
 			mlx_destroy_image(v->mlx, v->img);
@@ -53,10 +53,10 @@ int	key_hook(int keycode, t_mlx *v)
 
 int	motion_hook(int x, int y, t_mlx *v)
 {
-	if (x >= 0 && x < WW && y >= 0 && y < HH && v->num == 1 && v->m == UI_CLR)
+	if (x >= 0 && x < WW && y >= 0 && y < HH && v->num == 1 && v->m == CLR)
 	{
-		v->jr = (((MAX_J - MIN_J) / (D(WW) - 0.0)) * (D(x) - 0.0)) + MIN_J;
-		v->ji = (((MAX_J - MIN_J) / (D(WW) - 0.0)) * (D(y) - 0.0)) + MIN_J;
+		v->jr = (((MXJ - MNJ) / ((double)(WW) - 0.0)) * ((double)(x) - 0.0)) + MNJ;
+		v->ji = (((MXJ - MNJ) / ((double)(WW) - 0.0)) * ((double)(y) - 0.0)) + MNJ;
 		mlx_destroy_image(v->mlx, v->img);
 		mlx_clear_window(v->mlx, v->win);
 		expose_hook(v);
@@ -66,17 +66,17 @@ int	motion_hook(int x, int y, t_mlx *v)
 
 int	mouse_hook(int button, int x, int y, t_mlx *v)
 {
-	if (v->m == UI_CLR && x >= 0 && x < WW && y >= 0 && y < HH)
+	if (v->m == CLR && x >= 0 && x < WW && y >= 0 && y < HH)
 	{
 		if (button == 1)
 		{
-			v->padx = round((D(MID_W + v->padx) - D(x)) * 1.30);
-			v->pady = round((D(MID_H + v->pady) - D(y)) * 1.30);
+			v->padx = round(((double)(MW + v->padx) - (double)(x)) * 1.30);
+			v->pady = round(((double)(MH + v->pady) - (double)(y)) * 1.30);
 		}
 		else if (button == 2)
 		{
-			v->padx = round((D(MID_W + v->padx) - D(x)) * 0.70);
-			v->pady = round((D(MID_H + v->pady) - D(y)) * 0.70);
+			v->padx = round(((double)(MW + v->padx) - (double)(x)) * 0.70);
+			v->pady = round(((double)(MH + v->pady) - (double)(y)) * 0.70);
 		}
 		if (button == 1 || button == 5)
 			v->z += (v->z * 0.30);
@@ -96,4 +96,3 @@ int	close_hook(int button, t_mlx *v)
 	exit(0);
 	return (0);
 }
-	

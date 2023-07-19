@@ -6,7 +6,7 @@
 #    By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/27 10:18:58 by yzisis-p          #+#    #+#              #
-#    Updated: 2023/07/19 23:18:19 by yzisis-p         ###   ########.fr        #
+#    Updated: 2023/07/19 23:40:05 by yzisis-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ SRC =	src/main.c \
 			src/draw.c	\
 			src/fractals.c \
 			src/controls.c \
-			src/mandelbrod.c \
 			src/tools.c \
 			src/utils.c \
 			src/colors.c

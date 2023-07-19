@@ -6,16 +6,16 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/19 16:01:34 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/20 00:26:29 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 
-void	controls_part_one(t_mlx *v, int keycode)
+void	controls(t_mlx *v, int keycode)
 {
 	if (keycode == 1 || keycode == 46)
-		v->m = (v->m == UI_CLR) ? UI_DISABLE_CLR : UI_CLR;
+		v->m = (v->m == CLR) ? DIS_CLR : CLR;
 	else if (keycode == 12 && v->imax > 2)
 		v->imax -= 2.;
 	else if (keycode == 13)
@@ -40,7 +40,7 @@ void	controls_part_one(t_mlx *v, int keycode)
 		v->padx -= 70.;
 }
 
-void	controls_part_two(t_mlx *v, int keycode)
+void	controls_two(t_mlx *v, int keycode)
 {
 	t_hsv	hsv;
 
@@ -56,7 +56,7 @@ void	controls_part_two(t_mlx *v, int keycode)
 		v->clr_h = hsv.h;
 		v->clr_s = hsv.s;
 		v->clr_v = hsv.v;
-		v->m = UI_DISABLE_CLR;
+		v->m = DIS_CLR;
 	}
 }
 
@@ -73,5 +73,5 @@ void		reset_values(t_mlx *v)
 	v->clr_h = 358.;
 	v->clr_s = 0.80;
 	v->clr_v = 0.92;
-	v->m = UI_DISABLE_CLR;
+	v->m = DIS_CLR;
 }

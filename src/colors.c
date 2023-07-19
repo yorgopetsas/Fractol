@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/19 23:16:51 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/20 01:17:50 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_rgb_to_hex(t_rgb rgb)
 	return (((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff));
 }
 
-int ft_hsv_to_hex(double h, double s, double v)
+int	ft_hsv_to_hex(double h, double s, double v)
 {
 	t_hsv		hsv;
 	t_rgb		rgb;
@@ -61,20 +61,4 @@ int ft_hsv_to_hex(double h, double s, double v)
 	hsv = (t_hsv){.h = h, .s = s, .v = v};
 	rgb = ft_hsv_to_rgb(hsv);
 	return (ft_rgb_to_hex(rgb));
-}
-
-int		ft_shade_color(int clr, double val)
-{
-	int r;
-	int g;
-	int b;
-
-	if (val > 1.0)
-		val = 1.0;
-	else if (val < 0.0)
-		val = 0.0;
-	r = floor(D((clr >> 16) & 0xFF) - D(D((clr >> 16) & 0xFF) * val));
-	g = floor(D((clr >> 8) & 0xFF) - D(D((clr >> 8) & 0xFF) * val));
-	b = floor(D((clr) & 0xFF) - D(D((clr) & 0xFF) * val));
-	return (((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff));
 }

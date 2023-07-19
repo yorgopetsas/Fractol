@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/19 23:25:11 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/20 01:16:13 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	yz_error(int type)
 	char	*str;
 
 	if (type == 0)
-		write(2, MSG0, ft_strlen(MSG0));
+		write(2, INSTRC, ft_strlen(INSTRC));
 	else if (type == 1)
 		write(2, MSG1, ft_strlen(MSG1));
 	else if (type == 2)
@@ -25,7 +25,7 @@ int	yz_error(int type)
 		str = "error : \n";
 		write(2, str, ft_strlen(str));
 		write(2, "\n", 2);
-		write(2, MSG0, ft_strlen(MSG0));
+		write(2, INSTRC, ft_strlen(INSTRC));
 		free(str);
 	}
 	write(2, "\n", 1);
@@ -47,9 +47,9 @@ int	yz_check(t_mlx *v, char **av)
 
 int	ft_rand(int min, int max)
 {
-	int i;
-	int cpy;
-	int num;
+	int	i;
+	int	cpy;
+	int	num;
 	int	res;
 
 	i = 0;

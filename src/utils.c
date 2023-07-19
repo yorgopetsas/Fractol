@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/19 23:17:26 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/20 01:17:31 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlen(const char *s)
 
 void	ft_cpy(char *s1, char *s2)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (s1[++i] != 0)
@@ -35,7 +35,7 @@ void	ft_cpy(char *s1, char *s2)
 	s2[i] = 0;
 }
 
-int		ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 

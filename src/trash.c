@@ -5,20 +5,20 @@
 // int			close_hook(int button, t_var *v);
 // int			mouse_hook(int button, int x, int y, t_var *v);
 // void		yz_mlx_draw(t_var *v, int x, int y, int clr);
-// void		user_interface(t_var *v);
-// void		user_interface_texts(t_var *v);
+// void		iface(t_var *v);
+// void		yz_menu(t_var *v);
 // t_percent	ft_rgb_to_percent(t_rgb rgb);
-// void		draw_fractal(t_var *v);
+// void		yz_itr_frt(t_var *v);
 // void		fractal_mandelbrot(t_var *v);
 // void		fractal_julia(t_var *v);
 // void		rotate_fractal(t_var *v, int rot);
-// void		my_mlx_pixel_put(t_var *data, int x, int y, int color);
+// void		yz_mlx_pixel_put(t_var *data, int x, int y, int color);
 
-// void		controls_part_one(t_var *v, int keycode);
-// void		controls_part_two(t_var *v, int keycode);
+// void		controls(t_var *v, int keycode);
+// void		controls_two(t_var *v, int keycode);
 // void		reset_values(t_var *v);
 
-// void	my_mlx_pixel_put(t_mlx *data, int x, int y, int color);
+// void	yz_mlx_pixel_put(t_mlx *data, int x, int y, int color);
 // void	yz_print_mandelbrat(t_mlx *mx);
 // int		yz_mouse_hook(int keycode, t_mlx *mx);
 // int		yz_key_hook(int keycode, t_mlx *mx);
@@ -138,10 +138,10 @@
 // }
 
 
-		// my_mlx_pixel_put(&v, 20, 20, 0x00998020);
-	// my_mlx_pixel_put(&v, 21, 20, 0x00998020);
-	// my_mlx_pixel_put(&v, 22, 20, 0x00998020);
-	// my_mlx_pixel_put(&v, 23, 20, 0x00998020);
+		// yz_mlx_pixel_put(&v, 20, 20, 0x00998020);
+	// yz_mlx_pixel_put(&v, 21, 20, 0x00998020);
+	// yz_mlx_pixel_put(&v, 22, 20, 0x00998020);
+	// yz_mlx_pixel_put(&v, 23, 20, 0x00998020);
 
 
 // static void	init_win(t_var *v)
@@ -154,17 +154,17 @@
 // 	v->addr = mlx_get_data_addr(v->img, &v->bits_per_pixel, &v->line_length,
 // 							&v->endian);
 
-// 	// user_interface_texts(v);
-// 	// user_interface(v);
+// 	// yz_menu(v);
+// 	// iface(v);
 
-// 	// my_mlx_pixel_put(v, 21, 20, 0x00998020);
+// 	// yz_mlx_pixel_put(v, 21, 20, 0x00998020);
 
 // 	mlx_expose_hook(v->win, mlx_expose_hook, v);
 // 	mlx_hook(v->win, 6, 64, motion_hook, v);
 // 	mlx_hook(v->win, 17, 0, close_hook, v);
 // 	mlx_hook(v->win, 2, 0, key_hook, v);
 // 	mlx_mouse_hook(v->win, mouse_hook, v);
-// 	draw_fractal(v);
+// 	yz_itr_frt(v);
 // 	mlx_do_key_autorepeaton(v->mlx);
 // 	mlx_loop(v->mlx);
 
@@ -260,10 +260,10 @@
 // 	// yz_print_mandelbrat(v);
 // 	// v->img = mlx_new_image(v->mlx, WW, HH);
 // 	// v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
-// 	// draw_fractal(v);
-// 	// user_interface(v);
+// 	// yz_itr_frt(v);
+// 	// iface(v);
 // 	// mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
-// 	// user_interface_texts(v);
+// 	// yz_menu(v);
 // 	return (0);
 // }
 
@@ -271,11 +271,11 @@
 // {
 // 	// v->img = mlx_new_image(v->mlx, WW, HH);
 // 	// v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
-// 	// draw_fractal(v);
-// 	// user_interface_texts(v);
+// 	// yz_itr_frt(v);
+// 	// yz_menu(v);
 // 	// No Imprime
 // 	mlx_string_put(v->mlx, v->win, 100, 100, 0x00888020, "NAME");
-// 	// user_interface(v);
+// 	// iface(v);
 // 	// mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
 
 	
@@ -285,7 +285,7 @@
 	
 	// v->img = mlx_new_image(v->mlx, WIN_W, WIN_H);
 	// v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
-	// user_interface(v);
+	// iface(v);
 	// yz_print_mandelbrat(v);
 	// yz_print_bckgrnd(v);
 	
@@ -374,7 +374,7 @@
 // }
 
 // My Put Pixel Function
-// void	my_mlx_pixel_put(t_var *data, int x, int y, int color)
+// void	yz_mlx_pixel_put(t_var *data, int x, int y, int color)
 // {
 // 	char	*dst;
 
@@ -383,7 +383,7 @@
 // }
 
 
-// void	my_mlx_pixel_put(t_mlx *data, int x, int y, int color)
+// void	yz_mlx_pixel_put(t_mlx *data, int x, int y, int color)
 // {
 // 	char	*dst;
 
@@ -472,3 +472,198 @@ int		ft_strcmp(char *s1, char *s2)
 // 	}
 // 	return (0);
 // }
+
+void	yz_print_menu(t_mlx *mx)
+{
+	t_menu		mu;
+	int		max_iterations;
+	char	*text;
+	t_mlx	*temp;
+
+	temp = mx;
+	text = " ";
+	max_iterations = 1;
+	yz_init_menu_str(&mu);
+	mlx_string_put(mx->mlx, mx->win, 20, 20, 0x00888020, "NAME");
+	mlx_string_put(mx->mlx, mx->win, mu.ax, mu.ay, mu.color, "AUTHOR");
+	mlx_string_put(mx->mlx, mx->win, mu.mx, mu.my, mu.color, text);
+}
+
+void	yz_init_menu_str(t_menu *mu)
+{
+	mu->max_iterations = 60;
+	mu->nx = 100;
+	mu->ny = 100;
+	mu->ax = 100;
+	mu->ay = 120;
+	mu->mx = 100;
+	mu->my = 140;
+	mu->color = 120;
+	mu->max_iterations = 1;
+}
+
+
+void	yz_print_bckgrnd(t_mlx *mx)
+{
+	int	c;
+	int	c2;
+
+	c = 0;
+	c2 = 0;
+	while (c2 < HH)
+	{
+		while (c < WW)
+		{
+			yz_mlx_pixel_put(mx, c, c2, 0x008099020);
+			c += 1;
+		}
+		c = 0;
+		c2 += 1;
+	}
+}
+
+
+// Menu data
+typedef struct	s_menu {
+	// char	*name;
+	// char	*author;
+	double	nx;
+	double	ny;
+	double	ax;
+	double	ay;	
+	double	mx;
+	double	my;
+	int		color;
+	int		max_iterations;
+}				t_menu;
+
+typedef struct s_fractol {
+	int				isinside;
+	int				color;
+	double			minre;
+	double			maxre;
+	double			minim;
+	double			maxim;
+	double			re_factor;
+	double			im_factor;
+	double			cr;
+	double			ci;
+	double			zr2;
+	double			zi2;
+	unsigned int	maxiterations;
+	int				e;
+	int				m;
+	int				x;
+	int				y;
+	int				sl;
+	int				len;
+	int				nbr;
+	int				num;
+	int				bpp;
+	int				end;
+	int				rot;
+	int				clr;
+	char			*d;
+	char			*nam;
+	char			ftl[3][12];
+	float			minx;
+	float			miny;
+	double			i;
+	double			z;
+	double			imax;
+	double			padx;
+	double			pady;
+	double			clr_h;
+	double			clr_s;
+	double			clr_v;
+	long double		jr;
+	long double		ji;
+	long double		mr;
+	long double		mi;
+	long double		zr;
+	long double		zi;
+	long double		tmp;
+	long double		mod;
+	void			*img;
+	void			*mlx;
+	void			*win;
+	char			*addr;
+	int				bits_per_pixel;
+	int				line_length;
+	int				endian;
+}				t_fractol;
+
+void		yz_print_mandelbrat(t_mlx *mx);
+void		yz_mandel_calc(t_fractol *fm, t_mlx *mx);
+void		man_calc_two(t_fractol *fm, unsigned int n);
+void		man_calc_one(t_fractol *fm, unsigned int x);
+void		yz_init_mandelbrot_struct(t_fractol *fm);
+
+// # define MIN_X = 0;
+// # define MIN_Y = 0;
+// # define MAX_X = 0;
+// # define MAX_Y = 0;
+//ft_hsv_to_hex(v->clr_h, v->clr_s, v->clr_v)
+
+// void		yz_print_bckgrnd(t_mlx *mx);
+
+
+
+	// if (((v->x >= 25 && v->x <= 188) &&
+	// ((v->y >= 25 && v->y <= 213) || (v->y >= 237 && v->y <= 326) ||
+	// (v->y >= (HH - 133) && v->y <= (HH - 25)))) ||
+	// (v->x >= (v->len - 1) && v->x <= (WW - 25) &&
+	// v->y >= (HH - 65) && v->y <= (HH - 25)))
+	// 	v->clr = ft_shade_color(v->clr, 0.99);
+
+
+		// v->zr = (v->e == 0 || v->e == 2) ? (D(v->x) / v->z) + v->minx :
+	// (D(v->y) / v->z) + v->miny;
+
+	// v->zi = (v->e == 0 || v->e == 2) ? (D(v->y) / v->z) + v->miny :
+	// (D(v->x) / v->z) + v->minx;
+
+	// v->mod = (v->num == 2) ? 2 : -2;
+
+		
+	// v->mr = (v->e == 0 || v->e == 2) ? (D(v->x) / v->z) + v->minx :
+	// (D(v->y) / v->z) + v->miny;
+
+		// if (((v->x >= 25 && v->x <= 188) &&
+	// ((v->y >= 25 && v->y <= 213) || (v->y >= 237 && v->y <= 326) ||
+	// (v->y >= (HH - 133) && v->y <= (HH - 25)))) ||
+	// (v->x >= (v->len - 1) && v->x <= (WW - 25) &&
+	// v->y >= (HH - 65) && v->y <= (HH - 25)))
+	// 	v->clr = ft_shade_color(v->clr, 0.35);
+
+		// v->mi = (v->e == 0 || v->e == 2) ? (D(v->y) / v->z) + v->miny :
+	// (D(v->x) / v->z) + v->minx;
+
+	// typedef struct s_percent
+// {
+// 	double		r;
+// 	double		g;
+// 	double		b;
+// }				t_percent;\
+
+
+// int		ft_shade_color(int clr, double val)
+// {
+// 	int r;
+// 	int g;
+// 	int b;
+
+// 	if (val > 1.0)
+// 		val = 1.0;
+// 	else if (val < 0.0)
+// 		val = 0.0;
+// 	r = floor(D((clr >> 16) & 0xFF) - D(D((clr >> 16) & 0xFF) * val));
+// 	g = floor(D((clr >> 8) & 0xFF) - D(D((clr >> 8) & 0xFF) * val));
+// 	b = floor(D((clr) & 0xFF) - D(D((clr) & 0xFF) * val));
+// 	return (((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff));
+// }
+
+# define D (double)
+
+// void		yz_mlx_draw(t_mlx *v, int x, int y, int clr);
+// void		iface(t_mlx *v);
