@@ -6,32 +6,34 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/20 01:22:47 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/20 01:30:48 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-// REMOVE  ----- LIBRARY FOR PRINTF() 
-# include <stdio.h>
-// LIBFT NOT SURE IF TO EXCLUDE IT
-// # include "../libft/include/libft.h"
-
 // LIBRARY FOR READ
 # include <unistd.h>
-
 // MATH LIBRARY
 # include <math.h>
-
 // MLX LIBRARY
 # include "../inc/mlx/mlx.h"
-
 // LIBRARY FOR MALLOC() AND ARGUMENTS PARSEMENT
 # include <stdlib.h>
 
+# define WW 1280
+# define HH 720
+# define MW 640
+# define MH 360
+# define MXJ -3.20
+# define MNJ 3.200
 # define CLR 0xC9C9C9
 # define DIS_CLR 0xC0C0C0
+# define TITLE "Fractol by yzisis-p v 1.0"
+# define INSTRC "Type: \'./fractol Julia\' or \'./fractol Mandelbrot\'"
+# define MSG1 "error: Window size must be greater than 1024 x 576."
+# define MSG3 "\" isn't a valid fractal name."
 
 typedef struct s_hsv
 {
@@ -87,17 +89,7 @@ typedef struct s_mlx
 	void		*win;
 }				t_mlx;
 
-# define WW 1280
-# define HH 720
-# define MW 640
-# define MH 360
-# define MXJ -3.20
-# define MNJ 3.200
 
-# define TITLE "Fractol by yzisis-p v 1.0"
-# define INSTRC "Type: \'./fractol Julia\' or \'./fractol Mandelbrot\'"
-# define MSG1 "error: Window size must be greater than 1024 x 576."
-# define MSG3 "\" isn't a valid fractal name."
 
 void		yz_mlx_pixel_put(t_mlx *data, int x, int y, int color);
 void		yz_itr_frt(t_mlx *v);
@@ -120,9 +112,9 @@ void		controls_two(t_mlx *v, int keycode);
 void		reset_values(t_mlx *v);
 
 int			ft_hsv_to_hex(double h, double s, double v);
+int			ft_rgb_to_hex(t_rgb rgb);
 t_rgb		ft_hsv_to_rgb(t_hsv hsv);
 t_rgb		ft_hex_to_rgb(int hex);
-int			ft_rgb_to_hex(t_rgb rgb);
 
 // LIBFT
 int			ft_rand(int min, int max);

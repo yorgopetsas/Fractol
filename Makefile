@@ -6,7 +6,7 @@
 #    By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/27 10:18:58 by yzisis-p          #+#    #+#              #
-#    Updated: 2023/07/19 23:40:05 by yzisis-p         ###   ########.fr        #
+#    Updated: 2023/07/20 01:26:35 by yzisis-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ STR_DIR =	src/
 HEADER_FRAC =	inc/fractol.h
 
 # Headers of libtf
-DIR_LIBFT =	libft/include
+# DIR_LIBFT =	libft/include
 
 # Headers of mlx
 DIR_MLX =	inc/mlx
