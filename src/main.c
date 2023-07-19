@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/19 17:40:51 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/19 18:17:51 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ static void	yz_asgn(t_mlx *v)
 	v->imax = 21.;
 	v->jr = -1.1380;
 	v->ji = 0.2403;
-	v->clr_h = 358.;
-	v->clr_s = 0.80;
-	v->clr_v = 0.92;
+	v->clr_h = 258.;
+	v->clr_s = 0.40;
+	v->clr_v = 0.52;
 	v->m = 0.;
 }
 
@@ -91,12 +91,7 @@ static void	init_win(t_mlx *mx)
 	mlx_mouse_hook(mx->win, mouse_hook, mx);
 	mlx_do_key_autorepeaton(mx->mlx);
 	mlx_loop(mx->mlx);
-	exit(0);
-	// user_interface_texts(mx);
-	// user_interface(v);
-	// draw_fractal(v);
-	// mlx_do_key_autorepeaton(v->mlx);
-	// yz_print_mandelbrat(mx);
+	// exit(0);
 }
 
 void	yz_init_menu_str(t_menu *mu)
@@ -148,12 +143,10 @@ int	main(int argc, char **argv)
 
 	mode = argv[1];
 	v = (t_var *)malloc(sizeof(t_var));
+	// mx = (t_mlx *)malloc(sizeof(t_mlx));
+	// mx.nbr = argc;
 	v->nbr = argc;
 	yz_mx_init(&mx);
-
-	// mx = (t_mlx *)malloc(sizeof(t_mlx));
-	// yz_check_input(argc, mode);
-	// init_win(&mx);
 
 	if (argc != 2)
 		return (error(0));
@@ -165,6 +158,9 @@ int	main(int argc, char **argv)
 		init_win(&mx);
 	return (0);
 }
+
+	// yz_check_input(argc, mode);
+	// init_win(&mx);
 
 	// v->mlx = mlx_init();
 	// v->win = mlx_new_window(v->mlx, WW, HH, PROG_NAME);

@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/19 17:59:55 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/19 18:16:09 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,12 @@
 
 int		expose_hook(t_mlx *v)
 {
-	
-	// v->img = mlx_new_image(v->mlx, WIN_W, WIN_H);
-	// v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
-	// user_interface(v);
-	// yz_print_mandelbrat(v);
-	// yz_print_bckgrnd(v);
-	// user_interface(v);
 
-	if (v->num == 4)
-	{
-		mlx_string_put(v->mlx, v->win, 20, 20, 0x00888020, "MANDELBROT");
-	}
-	mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
-	// mlx_pixel_put(v->mlx, v->win, 20, 20, 0x008099020);
 	draw_fractal(v);
-
+	user_interface(v);
 	user_interface_texts(v);
 	return (0);
 }
-
 
 int	key_hook(int keycode, t_mlx *v)
 {
@@ -48,19 +34,9 @@ int	key_hook(int keycode, t_mlx *v)
 	}
 	else
 	{
-		// if (keycode == 18)
-		// {
-		// 	yz_print_mandelbrat(v);
-		// }
-		// else if (keycode == 19)
-		// {
-		// 	yz_print_bckgrnd(v);
-		// }
+
 		if (keycode >= 1 && keycode <= 123 && ++r > 0)
-		{
-			printf("Key ID:%i", keycode);
 			controls_part_one(v, keycode);
-		}
 		else if (keycode >= 124 && keycode <= 258 && ++r > 0)
 			controls_part_two(v, keycode);
 		if (r > 0)
@@ -115,13 +91,20 @@ int	close_hook(int button, t_mlx *v)
 {
 	(void)button;
 	(void)v;
-	exit(0);
+	// exit(0);
 	return (0);
 }
 
 
 
-
+		// if (keycode == 18)
+		// {
+		// 	yz_print_mandelbrat(v);
+		// }
+		// else if (keycode == 19)
+		// {
+		// 	yz_print_bckgrnd(v);
+		// }
 
 // int		expose_hook(t_mlx *v)
 // {
@@ -159,3 +142,19 @@ int	close_hook(int button, t_mlx *v)
 	
 // 	return (0);
 // }
+
+	
+	// v->img = mlx_new_image(v->mlx, WIN_W, WIN_H);
+	// v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
+	// user_interface(v);
+	// yz_print_mandelbrat(v);
+	// yz_print_bckgrnd(v);
+	
+
+	// if (v->num == 4)
+	// {
+	// 	mlx_string_put(v->mlx, v->win, 20, 20, 0x00888020, "MANDELBROT");
+	// }
+	// mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
+	// mlx_pixel_put(v->mlx, v->win, 20, 20, 0x008099020);
+	

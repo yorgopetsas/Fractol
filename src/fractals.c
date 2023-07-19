@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 13:09:02 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/19 17:59:28 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/19 18:17:01 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	edit_hue_hex(t_mlx *v)
 void	fractal_julia(t_mlx *v)
 {
 	v->i = -1.0;
-	v->mod = 1;
+	v->mod = 2;
 	v->zr = (v->e == 0 || v->e == 2) ? (D(v->x) / v->z) + v->minx :
 	(D(v->y) / v->z) + v->miny;
 	v->zi = (v->e == 0 || v->e == 2) ? (D(v->y) / v->z) + v->miny :

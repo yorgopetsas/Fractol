@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/19 17:58:54 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/19 18:06:55 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,9 @@ void	draw_fractal(t_mlx *v)
 	v->y = -1;
 	v->nam = "Fractal : ";
 	v->len = WW - 50 - ft_strlen(v->nam) * 10;
-	
-	// 
 
-	// Aqui imprime
-	// mlx_string_put(v->mlx, v->win, 100, 100, 0x00888020, "NAME");
-	// mlx_pixel_put(v->mlx, v->win, 20, 20, 0x00888020);
-	// mlx_pixel_put(v->mlx, v->win, 21, 20, 0x00888020);
-	// mlx_pixel_put(v->mlx, v->win, 22, 20, 0x00888020);
-	// mlx_pixel_put(v->mlx, v->win, 23, 20, 0x00888020);
 	// fractal_mandelbrot(v);
-	// rotate_fractal(v, v->rot);
+	rotate_fractal(v, v->rot);
 	while (++v->y < HH && (v->x = -1) == -1)
 	{
 		while (++v->x < WW)
@@ -60,8 +52,8 @@ void	draw_fractal(t_mlx *v)
 				fractal_julia(v);
 			else if (v->num == 2)
 				// yz_print_mandelbrat(v);
-				fractal_julia(v);
-				// fractal_mandelbrot(v);
+				// fractal_julia(v);
+				fractal_mandelbrot(v);
 			else if (v->num == 3)
 				fractal_mandelbrot(v);
 		}
