@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/12 19:10:14 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/19 13:10:43 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,38 @@ typedef struct s_mlx {
 	char	set;
 }				t_mlx;
 
+// Menu data
+typedef struct	s_menu {
+	// char	*name;
+	// char	*author;
+	double	nx;
+	double	ny;
+	double	ax;
+	double	ay;	
+	double	mx;
+	double	my;
+	int		color;
+	int		max_iterations;
+}				t_menu;
+
+typedef struct s_fractol {
+	int				isinside;
+	int				color;
+	double			minre;
+	double			maxre;
+	double			minim;
+	double			maxim;
+	double			re_factor;
+	double			im_factor;
+	double			cr;
+	double			ci;
+	double			zr;
+	double			zr2;
+	double			zi;
+	double			zi2;
+	unsigned int	maxiterations;
+}				t_fractol;
+
 # define WW 1280
 # define HH 720
 
@@ -117,39 +149,19 @@ void		ft_cpy(char *s1, char *s2);
 t_hsv		ft_random_color(void);
 int			ft_rand(int min, int max);
 
+// NEW
+void		yz_print_mandelbrat(t_mlx *mx);
+void		yz_mandel_calc(t_fractol *fm, t_mlx *mx);
+void		man_calc_two(t_fractol *fm, unsigned int n);
+void		man_calc_one(t_fractol *fm, unsigned int x);
+void		yz_init_mandelbrot_struct(t_fractol *fm);
+
+
 #endif
 
 
 
-// Menu data
-// typedef struct	s_menu {
-// 	double	nx;
-// 	double	ny;
-// 	double	ax;
-// 	double	ay;	
-// 	double	mx;
-// 	double	my;
-// 	int		color;
-// 	int		max_iterations;
-// }				t_menu;
 
-// typedef struct s_fractol {
-// 	int				isinside;
-// 	int				color;
-// 	double			minre;
-// 	double			maxre;
-// 	double			minim;
-// 	double			maxim;
-// 	double			re_factor;
-// 	double			im_factor;
-// 	double			cr;
-// 	double			ci;
-// 	double			zr;
-// 	double			zr2;
-// 	double			zi;
-// 	double			zi2;
-// 	unsigned int	maxiterations;
-// }				t_fractol;
 
 // void	my_mlx_pixel_put(t_mlx *data, int x, int y, int color);
 // void	yz_print_mandelbrat(t_mlx *mx);

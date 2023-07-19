@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mandelbrod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
+/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:18:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/12 19:33:16 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/19 13:13:54 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	yz_init_mandelbrot_struct(t_fractol *fm)
 {
-	fm->maxiterations = 60;
+	fm->maxiterations = 20;
 	fm->color = 256;
 	fm->minre = -1.5;
 	fm->maxre = 1.5;

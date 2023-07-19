@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+         #
+#    By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/27 10:18:58 by yzisis-p          #+#    #+#              #
-#    Updated: 2023/07/12 17:29:22 by yorgopetsas      ###   ########.fr        #
+#    Updated: 2023/07/19 13:12:02 by yzisis-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,8 @@ SRC =	src/main.c \
 			src/draw.c	\
 			src/fractals.c \
 			src/controls.c \
+			src/mandelbrod.c \
 			src/temp.c
-			# src/mandelbrod.c \
 			# src/menu.c
 
 STR_DIR =	src/
