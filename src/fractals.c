@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 13:09:02 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/19 18:17:01 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/19 23:10:08 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ void	fractal_julia(t_mlx *v)
 void			fractal_mandelbrot(t_mlx *v)
 {
 	v->i = -2.0;
-
 	v->zr = 0.0;
 	v->zi = 0.0;
 	v->mod = (v->num == 2) ? 2 : -2;

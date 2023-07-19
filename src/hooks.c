@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/19 18:16:09 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/19 23:11:54 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 int		expose_hook(t_mlx *v)
 {
-
-	draw_fractal(v);
+	v->img = mlx_new_image(v->mlx, WW, HH);
+	v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
 	user_interface(v);
+	mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
+	draw_fractal(v);
 	user_interface_texts(v);
 	return (0);
 }
@@ -91,70 +93,7 @@ int	close_hook(int button, t_mlx *v)
 {
 	(void)button;
 	(void)v;
-	// exit(0);
+	exit(0);
 	return (0);
 }
-
-
-
-		// if (keycode == 18)
-		// {
-		// 	yz_print_mandelbrat(v);
-		// }
-		// else if (keycode == 19)
-		// {
-		// 	yz_print_bckgrnd(v);
-		// }
-
-// int		expose_hook(t_mlx *v)
-// {
-// 	t_mlx *g;
-// 	int tmp;
-	
-// 	g = v;
-	
-
-// 	tmp = 0;
-	
-// 	printf("%i", tmp);
-// 	// mlx_string_put(v->mlx, v->win, 100, 100, 0x00888020, "NAME");
-// 	// yz_print_mandelbrat(v);
-// 	// v->img = mlx_new_image(v->mlx, WW, HH);
-// 	// v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
-// 	// draw_fractal(v);
-// 	// user_interface(v);
-// 	// mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
-// 	// user_interface_texts(v);
-// 	return (0);
-// }
-
-// int	expose_hook(t_var *v)
-// {
-// 	// v->img = mlx_new_image(v->mlx, WW, HH);
-// 	// v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
-// 	// draw_fractal(v);
-// 	// user_interface_texts(v);
-// 	// No Imprime
-// 	mlx_string_put(v->mlx, v->win, 100, 100, 0x00888020, "NAME");
-// 	// user_interface(v);
-// 	// mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
-
-	
-// 	return (0);
-// }
-
-	
-	// v->img = mlx_new_image(v->mlx, WIN_W, WIN_H);
-	// v->d = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
-	// user_interface(v);
-	// yz_print_mandelbrat(v);
-	// yz_print_bckgrnd(v);
-	
-
-	// if (v->num == 4)
-	// {
-	// 	mlx_string_put(v->mlx, v->win, 20, 20, 0x00888020, "MANDELBROT");
-	// }
-	// mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
-	// mlx_pixel_put(v->mlx, v->win, 20, 20, 0x008099020);
 	

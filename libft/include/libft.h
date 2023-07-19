@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/02 13:30:40 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/19 16:08:02 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/19 20:26:05 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <math.h>
 
 # define BUFF_SIZE 1
-# define D (double)
+// # define D (double)
 # define MIN_V 135
 
 typedef struct	s_hsv
@@ -126,9 +126,9 @@ int				ft_shade_color(int clr, double val);
 int				ft_gradient_color(int clr1, int clr2, double val);
 
 t_percent		ft_rgb_to_percent(t_rgb rgb);
-// t_rgb			ft_hsv_to_rgb(t_hsv hsv);
-// t_rgb			ft_hex_to_rgb(int hex);
-// int				ft_rgb_to_hex(t_rgb rgb);
+t_rgb			ft_hsv_to_rgb(t_hsv hsv);
+t_rgb			ft_hex_to_rgb(int hex);
+int				ft_rgb_to_hex(t_rgb rgb);
 int				ft_hsv_to_hex(double h, double s, double v);
 
 #endif
