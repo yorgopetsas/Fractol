@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/20 01:22:28 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/20 17:59:49 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,22 +41,26 @@ void	yz_itr_frt(t_mlx *v)
 
 void	yz_menu(t_mlx *v)
 {
-	mlx_string_put(v->mlx, v->win, 41, 35, CLR, "Controls Keys");
+	char	*ttl;
+
+	if (v->num == 1)
+		ttl = "Fractal: Julia";
+	else
+		ttl = "Fractal: Mandelbrot";
+
+	mlx_string_put(v->mlx, v->win, 1037, 35, CLR, "Controls");
 	mlx_string_put(v->mlx, v->win, 1037, 63, CLR, "Move = ^ v < >");
 	mlx_string_put(v->mlx, v->win, 1037, 83, CLR, "Iter = W and Q");
 	mlx_string_put(v->mlx, v->win, 1037, 103, CLR, "Zoom = - and +");
-	mlx_string_put(v->mlx, v->win, 1037, 123, CLR, "Rot8 = R and T");
+	mlx_string_put(v->mlx, v->win, 1037, 123, CLR, "Rotate = R and T");
 	mlx_string_put(v->mlx, v->win, 1037, 143, CLR, "Mouse = M or S");
 	mlx_string_put(v->mlx, v->win, 1037, 163, CLR, "Color = SHIFT");
 	mlx_string_put(v->mlx, v->win, 1037, 183, CLR, "Reset = CLEAR");
 	mlx_string_put(v->mlx, v->win, 37, 248, v->m, "Controls Mouse");
 	mlx_string_put(v->mlx, v->win, 37, 276, v->m, "Zoom = SCROLL");
 	mlx_string_put(v->mlx, v->win, 37, 296, v->m, "or LMB and RMB");
-	mlx_string_put(v->mlx, v->win, 37, (HH - 123), CLR, "Fract Explorer");
-	mlx_string_put(v->mlx, v->win, 37, (HH - 95), CLR, "1 = Julia");
-	mlx_string_put(v->mlx, v->win, 37, (HH - 75), CLR, "2 = Mandelbrot");
-	mlx_string_put(v->mlx, v->win, 37, (HH - 55), CLR, "3 = Tricorn");
-	mlx_string_put(v->mlx, v->win, v->len + 11, (HH - 55), CLR, v->nam);
+	mlx_string_put(v->mlx, v->win, 1037, (HH - 75), CLR, ttl);
+	mlx_string_put(v->mlx, v->win, 1037, (HH - 75), CLR, ttl);
 	// free(v->nam);
 }
 

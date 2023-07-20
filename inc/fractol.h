@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/20 01:30:48 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/20 16:37:30 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include "../inc/mlx/mlx.h"
 // LIBRARY FOR MALLOC() AND ARGUMENTS PARSEMENT
 # include <stdlib.h>
+// LIBRARY for strlen
+# include <string.h>
 
 # define WW 1280
 # define HH 720
@@ -89,7 +91,7 @@ typedef struct s_mlx
 	void		*win;
 }				t_mlx;
 
-
+void		mlx_int_str_to_wordtab(char *str);
 
 void		yz_mlx_pixel_put(t_mlx *data, int x, int y, int color);
 void		yz_itr_frt(t_mlx *v);

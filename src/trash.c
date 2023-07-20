@@ -667,3 +667,15 @@ void		yz_init_mandelbrot_struct(t_fractol *fm);
 
 // void		yz_mlx_draw(t_mlx *v, int x, int y, int clr);
 // void		iface(t_mlx *v);
+
+
+// REMOVE  ----- LIBRARY FOR PRINTF() 
+// # include <stdio.h>
+// LIBFT NOT SURE IF TO EXCLUDE IT
+// # include "../libft/include/libft.h"
+
+
+	// mlx_string_put(v->mlx, v->win, 37, (HH - 123), CLR, "Fract Explorer");
+	// mlx_string_put(v->mlx, v->win, 37, (HH - 95), CLR, "1 = Julia");
+	// mlx_string_put(v->mlx, v->win, 37, (HH - 75), CLR, "2 = Mandelbrot");
+	// mlx_string_put(v->mlx, v->win, 37, (HH - 55), CLR, "3 = Tricorn");
