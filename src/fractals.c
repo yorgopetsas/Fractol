@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractals.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 13:09:02 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/20 01:18:48 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 13:58:51 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,27 +34,6 @@ void	rotate_fractal(t_mlx *v, int rot)
 			v->z = v->z * -1;
 	v->minx = ((MW + v->padx) / (v->z / 2)) / -2;
 	v->miny = ((MH + v->pady) / (v->z / 2)) / -2;
-}
-
-int	edit_hue_hex(t_mlx *v)
-{
-	t_hsv	hsv;
-	t_rgb	rgb;
-
-	if (v->i == v->imax)
-		return (0x000000);
-	else
-	{
-		hsv.h = v->clr_h + ((240. / v->imax) * v->i);
-		hsv.s = v->clr_s;
-		hsv.v = v->clr_v - (((v->clr_v - 0.10) / 100.0) * v->i);
-		while (hsv.h < 0.)
-			hsv.h += 360.0;
-		while (hsv.h > 360.)
-			hsv.h -= 360.0;
-		rgb = ft_hsv_to_rgb(hsv);
-	}
-	return (ft_rgb_to_hex(rgb));
 }
 
 void	fractal_julia(t_mlx *v)
@@ -104,6 +83,7 @@ void	fractal_mandelbrot(t_mlx *v)
 		v->zr = (v->zr * v->zr) - (v->zi * v->zi) + v->mr;
 		v->zi = v->mod * v->zi * v->tmp + v->mi;
 	}
+	// v->clr = 265 + v->x;
 	v->clr = edit_hue_hex(v);
 	mlx_pixel_put(v->mlx, v->win, v->x, v->y, v->clr);
 }

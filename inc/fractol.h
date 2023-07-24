@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 13:35:48 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/24 13:59:35 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # define MNJ 3.200
 # define CLR 0xC9C9C9
 # define DIS_CLR 0xC0C0C0
+
 # define TITLE "Fractol by yzisis-p v 1.0"
 # define INSTRC "Please Type: \'./fractol Julia\' or \'./fractol Mandelbrot\'"
 # define INSTRC2 "Name Misspeld. Should be: \'Julia\' or \'Mandelbrot\'"
@@ -90,6 +91,12 @@ typedef struct s_mlx
 	void		*win;
 }				t_mlx;
 
+// Fractol
+typedef struct s_fractol
+{
+	void		*win;
+}				t_fractol;
+
 void		mlx_int_str_to_wordtab(char *str);
 
 void		yz_mlx_pixel_put(t_mlx *data, int x, int y, int color);
@@ -112,6 +119,7 @@ void		controls(t_mlx *v, int keycode);
 void		controls_two(t_mlx *v, int keycode);
 void		reset_values(t_mlx *v);
 
+int			edit_hue_hex(t_mlx *v);
 int			ft_hsv_to_hex(double h, double s, double v);
 int			ft_rgb_to_hex(t_rgb rgb);
 t_rgb		ft_hsv_to_rgb(t_hsv hsv);
