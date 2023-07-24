@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 17:31:35 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 21:03:23 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@
 # include <stdlib.h>
 // LIBRARY for strlen
 # include <string.h>
-// LIBRARY FOR PRINTF _ REMOVE  ! ! ! 
-# include <stdio.h>
 
 # define WW 1278
 # define HH 718
@@ -39,21 +37,19 @@
 # define INSTRC "Please Type: \'./fractol Julia\' or \'./fractol Mandelbrot\'"
 # define INSTRC2 "Name Misspeld. Should be: \'Julia\' or \'Mandelbrot\'"
 
-typedef struct s_hsv
-{
-	double		h;
-	double		s;
-	double		v;
-}				t_hsv;
-
 typedef struct s_rgb
 {
-	double		r;
-	double		g;
-	double		b;
+	int		num_colors;
+	double	hue;
+	double	saturation;
+	double	value;
+	double	c;
+	double	red;
+	double	green;
+	double	blue;
+	double	x;
+	double	m;
 }				t_rgb;
-
-// Understand Why the different datatypes
 
 typedef struct s_mlx
 {
@@ -84,7 +80,6 @@ typedef struct s_mlx
 	long double	zi;
 	long double	tmp;
 	long double	mod;
-	int			color;
 	void		*img;
 	void		*mlx;
 	void		*win;
@@ -93,15 +88,9 @@ typedef struct s_mlx
 	char		*addr;
 }				t_mlx;
 
-// Fractol
-typedef struct s_fractol
-{
-	void		*win;
-}				t_fractol;
-
 void		mlx_int_str_to_wordtab(char *str);
 
-void		yz_mlx_pixel_put(t_mlx *data, int x, int y, int color);
+// void		yz_mlx_pixel_put(t_mlx *data, int x, int y, int color);
 void		yz_itr_frt(t_mlx *v);
 void		yz_menu(t_mlx *v);
 int			yz_error(int type);
@@ -121,19 +110,11 @@ void		controls(t_mlx *v, int keycode);
 void		controls_two(t_mlx *v, int keycode);
 void		reset_values(t_mlx *v);
 
-int			edit_hue_hex(t_mlx *v);
-int			ft_hsv_to_hex(double h, double s, double v);
-int			ft_rgb_to_hex(t_rgb rgb);
+int			yz_coloring(t_mlx *v);
 
-t_rgb		ft_hsv_to_rgb(t_hsv hsv);
-t_rgb		ft_hex_to_rgb(int hex);
-
-// LIBFT
 int			ft_rand(int min, int max);
 int			ft_strcmp(char *s1, char *s2);
 void		ft_cpy(char *s1, char *s2);
-
-t_hsv		ft_random_color(void);
 
 size_t		ft_strlen(const char *s);
 

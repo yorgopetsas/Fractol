@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 18:38:28 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 19:57:11 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,20 @@ int	motion_hook(int x, int y, t_mlx *v)
 	}
 	return (0);
 }
+
+// int		motion_hook(int x, int y, t_mlx *v)
+// {
+// 	if (x >= 0 && x < WW && y >= 0 && y < HH &&
+// 		v->num == 1 && v->m == CLR)
+// 	{
+// 		v->jr = (((MXJ - MNJ) / ((double)(WW) - 0.0)) * ((double)(x) - 0.0)) + MNJ;
+// 		v->ji = (((MXJ - MNJ) / ((double)(WW) - 0.0)) * ((double)(y) - 0.0)) + MNJ;
+// 		mlx_destroy_image(v->mlx, v->img);
+// 		mlx_clear_window(v->mlx, v->win);
+// 		expose_hook(v);
+// 	}
+// 	return (0);
+// }
 
 int	mouse_hook(int button, int x, int y, t_mlx *v)
 {

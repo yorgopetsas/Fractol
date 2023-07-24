@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 17:30:18 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 20:21:36 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ int	ft_rand(int min, int max)
 	return (res);
 }
 
-t_hsv	ft_random_color(void)
-{
-	t_hsv	hsv;
+// t_hsv	ft_random_color(void)
+// {
+// 	t_hsv	hsv;
 
-	hsv.h = ((double)ft_rand(0, 3600) / 10.0);
-	hsv.s = ((double)ft_rand(740, 810) / 1000.0);
-	hsv.v = ((double)ft_rand(800, 950) / 1000.0);
-	return (hsv);
-}
+// 	hsv.h = ((double)ft_rand(0, 3600) / 10.0);
+// 	hsv.s = ((double)ft_rand(740, 810) / 1000.0);
+// 	hsv.v = ((double)ft_rand(800, 950) / 1000.0);
+// 	return (hsv);
+// }
