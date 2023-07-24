@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/24 18:13:12 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 19:09:10 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	yz_itr_frt(t_mlx *v)
 	v->y = -1;
 	v->x = -1;
 	rotate_fractal(v, v->rot);
-	while (++v->y < HH - 1 && (v->x = -1) == -1)
+	while (++v->y < HH && (v->x = -1) == -1)
 	{
-		while (++v->x < WW - 1)
+		while (++v->x < WW)
 		{
 			if (v->num == 1)
 				fractal_julia(v);

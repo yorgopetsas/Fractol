@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 18:00:55 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 19:06:39 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	yz_asgn(t_mlx *d)
 	d->z = 170.0;
 	d->padx = 0.;
 	d->pady = 0.;
-	d->imax = 21.;
+	d->imax = 15.;
 	d->jr = -1.1380;
 	d->ji = 0.2403;
 	d->clr_h = 158.;
@@ -29,17 +29,16 @@ static void	yz_asgn(t_mlx *d)
 	d->color = 265;
 }
 
-static void	init_win(t_mlx *mx)
+void	init_win(t_mlx *mx)
 {
 	yz_asgn(mx);
 	mx->mlx = mlx_init();
 	mx->win = mlx_new_window(mx->mlx, WW, HH, TITLE);
-	mx->img = mlx_new_image(mx->mlx, WW, HH);
 	mlx_expose_hook(mx->win, expose_hook, mx);
 	mlx_hook(mx->win, 6, 64, motion_hook, mx);
-	mlx_hook(mx->win, 17, 0, close_hook, mx);
 	mlx_hook(mx->win, 2, 0, key_hook, mx);
 	mlx_mouse_hook(mx->win, mouse_hook, mx);
+	mlx_hook(mx->win, 17, 0, close_hook, mx);
 	mlx_do_key_autorepeaton(mx->mlx);
 	mlx_loop(mx->mlx);
 }

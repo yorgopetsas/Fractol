@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 13:09:02 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/24 18:11:09 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 19:31:37 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	fractal_mandelbrot(t_mlx *v)
 		v->zr = (v->zr * v->zr) - (v->zi * v->zi) + v->mr;
 		v->zi = v->mod * v->zi * v->tmp + v->mi;
 	}
-	// v->clr = edit_hue_hex(v);
-	v->clr = 400 * v->i;
+	v->clr = edit_hue_hex(v);
+	// v->clr = 400 * v->i;
 	mlx_pixel_put(v->mlx, v->win, v->x, v->y, v->clr);
 }
