@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/20 16:37:30 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 17:26:27 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,19 @@
 # include "../inc/mlx/mlx.h"
 // LIBRARY FOR MALLOC() AND ARGUMENTS PARSEMENT
 # include <stdlib.h>
-// LIBRARY for strlen
-# include <string.h>
 
-# define WW 1280
-# define HH 720
+# define WW 1278
+# define HH 718
 # define MW 640
 # define MH 360
 # define MXJ -3.20
 # define MNJ 3.200
 # define CLR 0xC9C9C9
 # define DIS_CLR 0xC0C0C0
-# define TITLE "Fractol by yzisis-p v 1.0"
-# define INSTRC "Type: \'./fractol Julia\' or \'./fractol Mandelbrot\'"
-# define MSG1 "error: Window size must be greater than 1024 x 576."
-# define MSG3 "\" isn't a valid fractal name."
+
+# define TITLE "Fractol (v1.0) by yzisis-p"
+# define INSTRC "Please Type: \'./fractol Julia\' or \'./fractol Mandelbrot\'"
+# define INSTRC2 "Name Misspeld. Should be: \'Julia\' or \'Mandelbrot\'"
 
 typedef struct s_hsv
 {
@@ -59,7 +57,6 @@ typedef struct s_mlx
 	int			y;
 	int			sl;
 	int			len;
-	int			nbr;
 	int			num;
 	int			bpp;
 	int			end;
@@ -113,6 +110,7 @@ void		controls(t_mlx *v, int keycode);
 void		controls_two(t_mlx *v, int keycode);
 void		reset_values(t_mlx *v);
 
+int			edit_hue_hex(t_mlx *v);
 int			ft_hsv_to_hex(double h, double s, double v);
 int			ft_rgb_to_hex(t_rgb rgb);
 t_rgb		ft_hsv_to_rgb(t_hsv hsv);

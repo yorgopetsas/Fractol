@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/20 17:43:09 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 17:14:46 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,16 @@ int	key_hook(int keycode, t_mlx *v)
 
 int	motion_hook(int x, int y, t_mlx *v)
 {
+	int		tmp;
+
 	if (x >= 0 && x < WW && y >= 0 && y < HH && v->num == 1 && v->m == CLR)
 	{
-		v->jr = (((MXJ - MNJ) / ((double)(WW) - 0.0)) * ((double)(x) - 0.0)) + MNJ;
-		v->ji = (((MXJ - MNJ) / ((double)(WW) - 0.0)) * ((double)(y) - 0.0)) + MNJ;
+		tmp = ((MXJ - MNJ) / ((double)(WW) - 0.0));
+		tmp = tmp * ((double)(x) - 0.0) + MNJ;
+		v->jr = tmp;
+		tmp = ((MXJ - MNJ) / ((double)(WW) - 0.0));
+		tmp = tmp * ((double)(y) - 0.0) + MNJ;
+		v->ji = tmp;
 		mlx_destroy_image(v->mlx, v->img);
 		mlx_clear_window(v->mlx, v->win);
 		expose_hook(v);

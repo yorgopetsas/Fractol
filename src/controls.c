@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/20 00:26:29 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 17:21:19 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void	controls(t_mlx *v, int keycode)
 		v->rot -= 90;
 	else if (keycode == 17)
 		v->rot += 90;
-	else if (keycode == 69)
+	else if (keycode == 34)
 		v->z += (v->z * 0.30);
-	else if (keycode == 71)
+	else if (keycode == 8)
 		reset_values(v);
-	else if (keycode == 78 && (v->z > 10 || v->z < -10))
+	else if (keycode == 31 && (v->z > 10 || v->z < -10))
 		v->z -= (v->z * 0.30);
 	else if (keycode == 83 && v->num != 1)
 		v->num = 1;

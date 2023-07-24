@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/20 17:59:49 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 17:17:57 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,12 @@ void	yz_mlx_pixel_put(t_mlx *data, int x, int y, int color)
 void	yz_itr_frt(t_mlx *v)
 {
 	v->y = -1;
-	v->nam = "Fractal : ";
-	v->len = WW - 50 - ft_strlen(v->nam) * 10;
+	v->len = WW - 50 * 8;
 
 	rotate_fractal(v, v->rot);
-	while (++v->y < HH && (v->x = -1) == -1)
+	while (++v->y < HH - 1 && (v->x = -1) == -1)
 	{
-		while (++v->x < WW)
+		while (++v->x < WW - 1)
 		{
 			if (v->num == 1)
 				fractal_julia(v);
@@ -47,52 +46,18 @@ void	yz_menu(t_mlx *v)
 		ttl = "Fractal: Julia";
 	else
 		ttl = "Fractal: Mandelbrot";
-
-	mlx_string_put(v->mlx, v->win, 1037, 35, CLR, "Controls");
-	mlx_string_put(v->mlx, v->win, 1037, 63, CLR, "Move = ^ v < >");
-	mlx_string_put(v->mlx, v->win, 1037, 83, CLR, "Iter = W and Q");
-	mlx_string_put(v->mlx, v->win, 1037, 103, CLR, "Zoom = - and +");
-	mlx_string_put(v->mlx, v->win, 1037, 123, CLR, "Rotate = R and T");
-	mlx_string_put(v->mlx, v->win, 1037, 143, CLR, "Mouse = M or S");
-	mlx_string_put(v->mlx, v->win, 1037, 163, CLR, "Color = SHIFT");
-	mlx_string_put(v->mlx, v->win, 1037, 183, CLR, "Reset = CLEAR");
-	mlx_string_put(v->mlx, v->win, 37, 248, v->m, "Controls Mouse");
-	mlx_string_put(v->mlx, v->win, 37, 276, v->m, "Zoom = SCROLL");
-	mlx_string_put(v->mlx, v->win, 37, 296, v->m, "or LMB and RMB");
-	mlx_string_put(v->mlx, v->win, 1037, (HH - 75), CLR, ttl);
-	mlx_string_put(v->mlx, v->win, 1037, (HH - 75), CLR, ttl);
-	// free(v->nam);
+	mlx_string_put(v->mlx, v->win, 1010, 5, CLR, ttl);
+	mlx_string_put(v->mlx, v->win, 1010, 5, CLR, ttl);
+	mlx_string_put(v->mlx, v->win, 1010, 43, CLR, "Actions:");
+	mlx_string_put(v->mlx, v->win, 1010, 43, CLR, "Actions:");
+	mlx_string_put(v->mlx, v->win, 1010, 63, CLR, "Move: Use Arrows");
+	mlx_string_put(v->mlx, v->win, 1010, 83, CLR, "Incr/Decr Iterr: W / Q");
+	mlx_string_put(v->mlx, v->win, 1037, 103, CLR, "Zoom = I or O");
+	mlx_string_put(v->mlx, v->win, 1010, 123, CLR, "Rotate: R / T");
+	mlx_string_put(v->mlx, v->win, 1010, 143, CLR, "Mouse On/Off: M / S");
+	mlx_string_put(v->mlx, v->win, 1010, 163, CLR, "Change Colors: Shift");
+	mlx_string_put(v->mlx, v->win, 1037, 183, CLR, "Reset = C");
+	mlx_string_put(v->mlx, v->win, 1010, 203, CLR, "Mouse Controls:");
+	mlx_string_put(v->mlx, v->win, 1010, 223, CLR, "Zoom: Scroll");
+	mlx_string_put(v->mlx, v->win, 1010, 243, CLR, "Zoom: LMB / RMB");
 }
-
-// void	yz_mlx_draw(t_mlx *v, int x, int y, int clr)
-// {
-// 	int	tmp1;
-// 	int	tmp2;
-
-// 	tmp1 = x;
-// 	tmp2 = y;
-// 	v->clr = ft_shade_color(clr, 0.20);
-
-// 	// while (v->x <= x && mlx_pixel_put(v->mlx, v->win, v->x, v->y, v->clr) == 0)
-// 	// 	v->x++;
-// 	// while (v->y <= y && mlx_pixel_put(v->mlx, v->win, v->x, v->y, v->clr) == 0)
-// 	// 	v->y++;
-// 	// while (v->x > tmp1 && mlx_pixel_put(v->mlx, v->win, v->x, v->y, v->clr) == 0)
-// 	// 	v->x--;
-// 	while (v->y > tmp2 && mlx_pixel_put(v->mlx, v->win, v->x, v->y, v->clr) == 0)
-// 		v->y--;
-// }
-
-// void	iface(t_mlx *v)
-// {
-// 	v->x = 25;
-// 	v->y = 25;
-// 	// yz_mlx_draw(v, 188, 213, CLR);
-// 	v->y = 237;
-// 	// yz_mlx_draw(v, 188, 326, v->m);
-// 	v->y = HH - 133;
-// 	yz_mlx_draw(v, 188, (HH - 25), CLR);
-// 	v->y = (HH - 65);
-// 	v->x = v->len - 1;
-// 	yz_mlx_draw(v, (WW - 25), (HH - 25), CLR);
-// }
