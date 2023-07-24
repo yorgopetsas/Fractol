@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 14:28:12 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/24 15:49:52 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <stdlib.h>
 // LIBRARY for strlen
 # include <string.h>
+// LIBRARY FOR PRINTF _ REMOVE  ! ! ! 
 # include <stdio.h>
 
 # define WW 1280
@@ -62,7 +63,6 @@ typedef struct s_mlx
 	int			y;
 	int			sl;
 	int			num;
-	// Fractal
 	int			rot;
 	int			clr;
 	char		ftl[3][12];
@@ -85,16 +85,12 @@ typedef struct s_mlx
 	long double	tmp;
 	long double	mod;
 	int			color;
-	// MLX
 	void		*img;
 	void		*mlx;
 	void		*win;
 	int			bpp;
 	int			end;
 	char		*addr;
-	// char		*nam;
-	// int			len;
-	// int			nbr;
 }				t_mlx;
 
 // Fractol
