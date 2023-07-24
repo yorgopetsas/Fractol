@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 01:40:50 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 01:43:41 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ double	yz_string_double(char *argv)
 	int		sign;
 	int		*decd;
 	int		decs;
-
 
 	result = 0.0;
 	decd = 0;
