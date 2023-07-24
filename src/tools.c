@@ -6,57 +6,78 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 21:09:48 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 01:40:50 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 
-int	yz_error(int type)
+double	yz_countdown(double result2, int *decd)
 {
-	if (type == 0)
-		write(2, INSTRC, ft_strlen(INSTRC));
-	else if (type == 2)
+	while (decd > 0)
 	{
-		write(2, INSTRC2, ft_strlen(INSTRC2));
+		result2 /= 10.0;
+		decd--;
 	}
-	write(2, "\n", 1);
-	return (-1);
+	return (result2);
 }
 
-int	yz_check(t_mlx *v, char **av)
+double	yz_calc_result(char *argv, int *decd, int decs, int sign)
 {
-	ft_cpy("Julia\0", v->ftl[0]);
-	ft_cpy("Mandelbrot\0", v->ftl[1]);
-	if (ft_strcmp(av[1], "Julia") == 0)
-		v->num = 1;
-	else if (ft_strcmp(av[1], "Mandelbrot") == 0)
-		v->num = 2;
-	else
-		return (1);
-	return (0);
+	double	result;
+
+	if (sign == -1)
+		argv++;
+	while (*argv)
+	{
+		if (*argv >= '0' && *argv <= '9')
+		{
+			if (decs)
+			{
+				result = result * 10 + (*argv - '0');
+				decd++;
+			}
+			else
+				result = result * 10 + (*argv - '0');
+		}
+		else if (*argv == '.' || *argv == ',' )
+			decs = 1;
+		else
+			break ;
+		argv++;
+	}
+	result = yz_countdown(result, decd);
+	return (result);
 }
 
-int	ft_rand(int min, int max)
+int	yz_check_sign(char *argv)
 {
-	int	i;
-	int	cpy;
-	int	num;
-	int	res;
+	int	sign;
 
-	i = 0;
-	res = 0;
-	num = (long)malloc(sizeof(long));
-	if (num < 0)
-		num = -num;
-	cpy = num;
-	while (num >= 10)
+	sign = 1;
+	if (*argv == '-')
 	{
-		res += (num % 10);
-		num = num / 10;
-		i++;
+		sign = -1;
+		argv++;
 	}
-	res = res * 17 + cpy + i;
-	res = (res % (max - min + 1)) + min;
-	return (res);
+	else if (*argv == '+')
+		argv++;
+	return (sign);
+}
+
+double	yz_string_double(char *argv)
+{
+	double	result;
+	int		sign;
+	int		*decd;
+	int		decs;
+
+
+	result = 0.0;
+	decd = 0;
+	decs = 0;
+	sign = 1;
+	sign = yz_check_sign(argv);
+	result = yz_calc_result(argv, decd, decs, sign);
+	return (result * sign);
 }

@@ -6,11 +6,36 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/24 17:30:24 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 01:40:55 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
+
+int	yz_error(int type)
+{
+	if (type == 0)
+		write(2, INSTRC, ft_strlen(INSTRC));
+	else if (type == 2)
+	{
+		write(2, INSTRC2, ft_strlen(INSTRC2));
+	}
+	write(2, "\n", 1);
+	return (-1);
+}
+
+int	yz_check(t_mlx *v, char **av)
+{
+	ft_cpy("Julia\0", v->ftl[0]);
+	ft_cpy("Mandelbrot\0", v->ftl[1]);
+	if (ft_strcmp(av[1], "Julia") == 0)
+		v->num = 1;
+	else if (ft_strcmp(av[1], "Mandelbrot") == 0)
+		v->num = 2;
+	else
+		return (1);
+	return (0);
+}
 
 size_t	ft_strlen(const char *s)
 {

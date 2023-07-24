@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 22:59:10 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 01:40:42 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ static void	yz_asgn(t_mlx *d)
 	d->rot = 0;
 	d->z = 170.0;
 	d->imax = 20.;
-	d->jr = -1.1380;
+	if (d->njr)
+		d->jr = d->njr;
+	else
+		d->jr = -1.1380;
 	d->ji = 0.2403;
 	d->clr_h = 155.;
 	d->clr_s = 0.60;
@@ -44,8 +47,10 @@ void	init_win(t_mlx *mx)
 
 int	main(int argc, char **argv)
 {
-	t_mlx		mx;
+	t_mlx			mx;
 
+	if (argc == 3)
+		mx.njr = yz_string_double(argv[2]);
 	if (argc < 2)
 		return (yz_error(0));
 	else if (yz_check(&mx, argv) > 0)

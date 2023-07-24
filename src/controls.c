@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 22:48:36 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 01:41:05 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,10 @@ void	reset_values(t_mlx *d)
 	d->padx = 0.;
 	d->pady = 0.;
 	d->imax = 20.;
-	d->jr = -1.1380;
+	if (d->njr)
+		d->jr = d->njr;
+	else
+		d->jr = -1.1380;
 	d->ji = 0.2403;
 	d->clr_h = 155.;
 	d->clr_s = 0.60;
