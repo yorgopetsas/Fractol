@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 13:59:35 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/24 14:28:12 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <stdlib.h>
 // LIBRARY for strlen
 # include <string.h>
+# include <stdio.h>
 
 # define WW 1280
 # define HH 720
@@ -33,7 +34,7 @@
 # define CLR 0xC9C9C9
 # define DIS_CLR 0xC0C0C0
 
-# define TITLE "Fractol by yzisis-p v 1.0"
+# define TITLE "Fractol (v1.0) by yzisis-p"
 # define INSTRC "Please Type: \'./fractol Julia\' or \'./fractol Mandelbrot\'"
 # define INSTRC2 "Name Misspeld. Should be: \'Julia\' or \'Mandelbrot\'"
 
@@ -51,6 +52,8 @@ typedef struct s_rgb
 	double		b;
 }				t_rgb;
 
+// Understand Why the different datatypes
+
 typedef struct s_mlx
 {
 	int			e;
@@ -58,15 +61,10 @@ typedef struct s_mlx
 	int			x;
 	int			y;
 	int			sl;
-	int			len;
-	int			nbr;
 	int			num;
-	int			bpp;
-	int			end;
+	// Fractal
 	int			rot;
 	int			clr;
-	char		*addr;
-	char		*nam;
 	char		ftl[3][12];
 	float		minx;
 	float		miny;
@@ -86,9 +84,17 @@ typedef struct s_mlx
 	long double	zi;
 	long double	tmp;
 	long double	mod;
+	int			color;
+	// MLX
 	void		*img;
 	void		*mlx;
 	void		*win;
+	int			bpp;
+	int			end;
+	char		*addr;
+	// char		*nam;
+	// int			len;
+	// int			nbr;
 }				t_mlx;
 
 // Fractol
@@ -122,6 +128,7 @@ void		reset_values(t_mlx *v);
 int			edit_hue_hex(t_mlx *v);
 int			ft_hsv_to_hex(double h, double s, double v);
 int			ft_rgb_to_hex(t_rgb rgb);
+
 t_rgb		ft_hsv_to_rgb(t_hsv hsv);
 t_rgb		ft_hex_to_rgb(int hex);
 
@@ -129,7 +136,9 @@ t_rgb		ft_hex_to_rgb(int hex);
 int			ft_rand(int min, int max);
 int			ft_strcmp(char *s1, char *s2);
 void		ft_cpy(char *s1, char *s2);
+
 t_hsv		ft_random_color(void);
+
 size_t		ft_strlen(const char *s);
 
 #endif

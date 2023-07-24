@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 13:09:02 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/24 13:58:51 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/24 14:38:13 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ void	fractal_mandelbrot(t_mlx *v)
 		v->zr = (v->zr * v->zr) - (v->zi * v->zi) + v->mr;
 		v->zi = v->mod * v->zi * v->tmp + v->mi;
 	}
-	// v->clr = 265 + v->x;
-	v->clr = edit_hue_hex(v);
+	v->clr = 400 * v->i;
 	mlx_pixel_put(v->mlx, v->win, v->x, v->y, v->clr);
 }

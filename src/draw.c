@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/24 13:58:28 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/24 14:11:05 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ void	yz_mlx_pixel_put(t_mlx *data, int x, int y, int color)
 void	yz_itr_frt(t_mlx *v)
 {
 	v->y = -1;
-	v->nam = "Fractal : ";
-	// v->len = WW - 50 - ft_strlen(v->nam) * 10;
 
 	rotate_fractal(v, v->rot);
 	while (++v->y < HH && (v->x = -1) == -1)
@@ -56,9 +54,9 @@ void	yz_menu(t_mlx *v)
 	mlx_string_put(v->mlx, v->win, 1037, 143, CLR, "Mouse = M or S");
 	mlx_string_put(v->mlx, v->win, 1037, 163, CLR, "Color = SHIFT");
 	mlx_string_put(v->mlx, v->win, 1037, 183, CLR, "Reset = C");
-	mlx_string_put(v->mlx, v->win, 1037, 248, CLR, "Controls Mouse");
+	mlx_string_put(v->mlx, v->win, 1037, 248, CLR, "Controls Mouse:");
 	mlx_string_put(v->mlx, v->win, 1037, 276, CLR, "Zoom = SCROLL");
-	mlx_string_put(v->mlx, v->win, 1037, 296, CLR, "or LMB and RMB");
+	mlx_string_put(v->mlx, v->win, 1037, 296, CLR, "or LMB / RMB");
 	mlx_string_put(v->mlx, v->win, 1037, (HH - 75), CLR, ttl);
 	mlx_string_put(v->mlx, v->win, 1037, (HH - 75), CLR, ttl);
 	// free(v->nam);

@@ -6,7 +6,7 @@
 /*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 13:36:17 by yorgopetsas      ###   ########.fr       */
+/*   Updated: 2023/07/24 14:40:40 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static void	yz_asgn(t_mlx *d)
 	d->clr_s = 0.60;
 	d->clr_v = 0.42;
 	d->m = 0.;
+	d->color = 265;
 }
 
 static void	init_win(t_mlx *mx)
@@ -47,16 +48,16 @@ static void	init_win(t_mlx *mx)
 int	main(int argc, char **argv)
 {
 	char		*mode;
-	t_mlx		*mx;
+	t_mlx		mx;
 
 	mode = argv[1];
-	mx = (t_mlx *)malloc(sizeof(t_mlx));
+	// mx = (t_mlx)malloc(sizeof(t_mlx));
 
 	if (argc < 2)
 		return (yz_error(0));
-	else if (yz_check(mx, argv) > 0)
+	else if (yz_check(&mx, argv) > 0)
 		return (yz_error(2));
 	else
-		init_win(mx);
+		init_win(&mx);
 	return (0);
 }
