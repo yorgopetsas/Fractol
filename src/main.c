@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 17:23:33 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 17:30:09 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static void	yz_asgn(t_mlx *d)
 	d->clr_s = 0.60;
 	d->clr_v = 0.42;
 	d->m = 0.;
+	d->color = 265;
 }
 
 static void	init_win(t_mlx *mx)

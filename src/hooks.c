@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 17:14:46 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 17:29:42 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	key_hook(int keycode, t_mlx *v)
 	}
 	else
 	{
-
 		if (keycode >= 1 && keycode <= 123 && ++r > 0)
 			controls(v, keycode);
 		else if (keycode >= 124 && keycode <= 258 && ++r > 0)

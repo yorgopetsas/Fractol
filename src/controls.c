@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 17:21:19 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 17:31:54 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	controls_two(t_mlx *v, int keycode)
 	}
 }
 
-void		reset_values(t_mlx *v)
+void	reset_values(t_mlx *v)
 {
 	v->e = 0;
 	v->rot = 0;

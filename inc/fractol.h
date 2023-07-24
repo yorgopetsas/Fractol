@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 17:26:27 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 17:31:35 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,10 @@
 # include "../inc/mlx/mlx.h"
 // LIBRARY FOR MALLOC() AND ARGUMENTS PARSEMENT
 # include <stdlib.h>
+// LIBRARY for strlen
+# include <string.h>
+// LIBRARY FOR PRINTF _ REMOVE  ! ! ! 
+# include <stdio.h>
 
 # define WW 1278
 # define HH 718
@@ -49,6 +53,8 @@ typedef struct s_rgb
 	double		b;
 }				t_rgb;
 
+// Understand Why the different datatypes
+
 typedef struct s_mlx
 {
 	int			e;
@@ -56,14 +62,9 @@ typedef struct s_mlx
 	int			x;
 	int			y;
 	int			sl;
-	int			len;
 	int			num;
-	int			bpp;
-	int			end;
 	int			rot;
 	int			clr;
-	char		*addr;
-	char		*nam;
 	char		ftl[3][12];
 	float		minx;
 	float		miny;
@@ -83,10 +84,20 @@ typedef struct s_mlx
 	long double	zi;
 	long double	tmp;
 	long double	mod;
+	int			color;
 	void		*img;
 	void		*mlx;
 	void		*win;
+	int			bpp;
+	int			end;
+	char		*addr;
 }				t_mlx;
+
+// Fractol
+typedef struct s_fractol
+{
+	void		*win;
+}				t_fractol;
 
 void		mlx_int_str_to_wordtab(char *str);
 
@@ -113,6 +124,7 @@ void		reset_values(t_mlx *v);
 int			edit_hue_hex(t_mlx *v);
 int			ft_hsv_to_hex(double h, double s, double v);
 int			ft_rgb_to_hex(t_rgb rgb);
+
 t_rgb		ft_hsv_to_rgb(t_hsv hsv);
 t_rgb		ft_hex_to_rgb(int hex);
 
@@ -120,7 +132,9 @@ t_rgb		ft_hex_to_rgb(int hex);
 int			ft_rand(int min, int max);
 int			ft_strcmp(char *s1, char *s2);
 void		ft_cpy(char *s1, char *s2);
+
 t_hsv		ft_random_color(void);
+
 size_t		ft_strlen(const char *s);
 
 #endif

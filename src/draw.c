@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/24 17:17:57 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 17:29:24 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	yz_mlx_pixel_put(t_mlx *data, int x, int y, int color)
 void	yz_itr_frt(t_mlx *v)
 {
 	v->y = -1;
-	v->len = WW - 50 * 8;
 
 	rotate_fractal(v, v->rot);
 	while (++v->y < HH - 1 && (v->x = -1) == -1)
