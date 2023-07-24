@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/20 16:37:30 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 13:35:48 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,8 @@
 # define CLR 0xC9C9C9
 # define DIS_CLR 0xC0C0C0
 # define TITLE "Fractol by yzisis-p v 1.0"
-# define INSTRC "Type: \'./fractol Julia\' or \'./fractol Mandelbrot\'"
-# define MSG1 "error: Window size must be greater than 1024 x 576."
-# define MSG3 "\" isn't a valid fractal name."
+# define INSTRC "Please Type: \'./fractol Julia\' or \'./fractol Mandelbrot\'"
+# define INSTRC2 "Name Misspeld. Should be: \'Julia\' or \'Mandelbrot\'"
 
 typedef struct s_hsv
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yorgopetsas <yorgopetsas@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/20 01:30:50 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 13:34:24 by yorgopetsas      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,11 @@
 
 int	yz_error(int type)
 {
-	char	*str;
-
 	if (type == 0)
 		write(2, INSTRC, ft_strlen(INSTRC));
-	else if (type == 1)
-		write(2, MSG1, ft_strlen(MSG1));
 	else if (type == 2)
 	{
-		str = "error : \n";
-		write(2, str, ft_strlen(str));
-		write(2, "\n", 2);
-		write(2, INSTRC, ft_strlen(INSTRC));
-		free(str);
+		write(2, INSTRC2, ft_strlen(INSTRC2));
 	}
 	write(2, "\n", 1);
 	return (-1);
