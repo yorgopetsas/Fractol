@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 21:03:23 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 22:37:30 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 # define MH 360
 # define MXJ -3.20
 # define MNJ 3.200
-# define CLR 0xC9C9C9
+# define CLR 0xC1C1C1
 # define DIS_CLR 0xC0C0C0
 
 # define TITLE "Fractol (v1.0) by yzisis-p"
@@ -96,6 +96,8 @@ void		yz_menu(t_mlx *v);
 int			yz_error(int type);
 int			yz_check(t_mlx *v, char **av);
 
+int			yz_coloring(t_mlx *v);
+
 int			expose_hook(t_mlx *v);
 int			motion_hook(int x, int y, t_mlx *v);
 int			key_hook(int keycode, t_mlx *v);
@@ -109,8 +111,6 @@ void		rotate_fractal(t_mlx *v, int rot);
 void		controls(t_mlx *v, int keycode);
 void		controls_two(t_mlx *v, int keycode);
 void		reset_values(t_mlx *v);
-
-int			yz_coloring(t_mlx *v);
 
 int			ft_rand(int min, int max);
 int			ft_strcmp(char *s1, char *s2);

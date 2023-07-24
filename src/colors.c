@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/24 21:04:03 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 21:12:48 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ int	yz_rgb_init(t_rgb clrz)
 
 	if (clrz.hue >= 0.0 && clrz.hue < 120.0) 
 		yz_rgb_range(&clrz, clrz.c, clrz.c, 0.0);
-	else if (clrz.hue >= 60.0 && clrz.hue < 160.0)
+	else if (clrz.hue >= 60.0 && clrz.hue < 120.0)
 		yz_rgb_range(&clrz, clrz.x, clrz.c, 0.0);
-	else if (clrz.hue >= 160.0 && clrz.hue < 240.0)
+	else if (clrz.hue >= 120.0 && clrz.hue < 240.0)
 		yz_rgb_range(&clrz, 0.0, clrz.c, clrz.x);
 	else if (clrz.hue >= 180.0 && clrz.hue < 240.0)
 		yz_rgb_range(&clrz, 0.0, clrz.x, clrz.c);

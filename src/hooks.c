@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 19:57:11 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 23:08:09 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int	key_hook(int keycode, t_mlx *v)
 	}
 	else
 	{
-		if (keycode >= 1 && keycode <= 123 && ++r > 0)
+		if (keycode >= 1 && keycode <= 82 && ++r > 0)
 			controls(v, keycode);
-		else if (keycode >= 124 && keycode <= 258 && ++r > 0)
+		else if (keycode >= 83 && keycode <= 258 && ++r > 0)
 			controls_two(v, keycode);
 		if (r > 0)
 		{
@@ -51,36 +51,22 @@ int	key_hook(int keycode, t_mlx *v)
 
 int	motion_hook(int x, int y, t_mlx *v)
 {
-	int		tmp;
+	int	t;
+	int	z;
 
-	if (x >= 0 && x < WW && y >= 0 && y < HH && v->num == 1 && v->m == CLR)
+	if (x >= 0 && x < WW && y >= 0 && y < HH 
+		&& v->num == 1 && v->m == CLR)
 	{
-		tmp = ((MXJ - MNJ) / ((double)(WW) - 0.0));
-		tmp = tmp * ((double)(x) - 0.0) + MNJ;
-		v->jr = tmp;
-		tmp = ((MXJ - MNJ) / ((double)(WW) - 0.0));
-		tmp = tmp * ((double)(y) - 0.0) + MNJ;
-		v->ji = tmp;
+		t = (((MXJ - MNJ) / ((double)(WW) - 0.0)) * ((double)(x) - 0.0)) + MNJ;
+		v->jr = t;
+		z = (((MXJ - MNJ) / ((double)(WW) - 0.0)) * ((double)(y) - 0.0)) + MNJ;
+		v->ji = z;
 		mlx_destroy_image(v->mlx, v->img);
 		mlx_clear_window(v->mlx, v->win);
 		expose_hook(v);
 	}
 	return (0);
 }
-
-// int		motion_hook(int x, int y, t_mlx *v)
-// {
-// 	if (x >= 0 && x < WW && y >= 0 && y < HH &&
-// 		v->num == 1 && v->m == CLR)
-// 	{
-// 		v->jr = (((MXJ - MNJ) / ((double)(WW) - 0.0)) * ((double)(x) - 0.0)) + MNJ;
-// 		v->ji = (((MXJ - MNJ) / ((double)(WW) - 0.0)) * ((double)(y) - 0.0)) + MNJ;
-// 		mlx_destroy_image(v->mlx, v->img);
-// 		mlx_clear_window(v->mlx, v->win);
-// 		expose_hook(v);
-// 	}
-// 	return (0);
-// }
 
 int	mouse_hook(int button, int x, int y, t_mlx *v)
 {
@@ -114,3 +100,17 @@ int	close_hook(int button, t_mlx *v)
 	exit(0);
 	return (0);
 }
+
+// 	int		tmp;
+
+// 	if (x >= 0 && x < WW && y >= 0 && y < HH && v->num == 1 && v->m == CLR)
+// 	{
+// t = ((MXJ - MNJ) / ((double)(WW) - 0.0)) * ((double)(x) - 0.0)) + MNJ;
+// 		v->jr = tmp;
+// 		tmp = ((MXJ - MNJ) / ((double)(WW) - 0.0));
+// 		tmp = tmp * ((double)(y) - 0.0) + MNJ;
+// 		v->ji = tmp;
+// 		mlx_destroy_image(v->mlx, v->img);
+// 		mlx_clear_window(v->mlx, v->win);
+// 		expose_hook(v);
+// 	}

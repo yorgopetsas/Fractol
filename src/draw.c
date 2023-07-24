@@ -6,13 +6,11 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/24 20:04:42 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 22:08:26 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
-
-
 
 void	yz_itr_frt(t_mlx *v)
 {
@@ -30,6 +28,14 @@ void	yz_itr_frt(t_mlx *v)
 		}
 	}
 }
+
+// void	my_mlx_pixel_put(t_mlx *data, int x, int y, int color)
+// {
+// 	char	*dst;
+
+// 	dst = data->addr + (y * data->sl + x * (data->bpp / 8));
+// 	*(unsigned int *)dst = color;
+// }
 
 void	yz_menu(t_mlx *v)
 {
