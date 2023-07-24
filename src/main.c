@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 17:30:09 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 18:00:55 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,11 @@ static void	init_win(t_mlx *mx)
 	mlx_mouse_hook(mx->win, mouse_hook, mx);
 	mlx_do_key_autorepeaton(mx->mlx);
 	mlx_loop(mx->mlx);
-	// exit(0);
 }
 
 int	main(int argc, char **argv)
 {
 	t_mlx		mx;
-
-	// mx = (t_mlx *)malloc(sizeof(t_mlx));
 
 	if (argc < 2)
 		return (yz_error(0));

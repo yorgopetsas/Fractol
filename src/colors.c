@@ -6,11 +6,19 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/24 17:27:49 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 18:11:58 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
+
+void	yz_help(t_hsv hsv)
+{
+	if (hsv.h == 360.)
+		hsv.h = 0.0;
+	else
+		hsv.h = hsv.h/60.;
+}
 
 t_rgb	ft_hsv_to_rgb(t_hsv hsv)
 {
@@ -19,6 +27,7 @@ t_rgb	ft_hsv_to_rgb(t_hsv hsv)
 	double		q;
 	double		t;
 
+	// yz_help(hsv);
 	(hsv.h == 360.) ? (hsv.h = 0.) : (hsv.h /= 60.);
 	p = hsv.v * (1. - hsv.s);
 	q = hsv.v * (1. - (hsv.s * (hsv.h - floor(hsv.h))));

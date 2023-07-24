@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/24 17:31:54 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/24 17:46:14 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void	controls(t_mlx *v, int keycode)
 {
-	if (keycode == 1 || keycode == 46)
-		v->m = (v->m == CLR) ? DIS_CLR : CLR;
-	else if (keycode == 12 && v->imax > 2)
+	if (keycode == 12 && v->imax > 2)
 		v->imax -= 2.;
 	else if (keycode == 13)
 		v->imax += 2.;
@@ -44,6 +42,13 @@ void	controls_two(t_mlx *v, int keycode)
 {
 	t_hsv	hsv;
 
+	if (keycode == 1 || keycode == 46)
+	{
+		if (v->m == CLR)
+			v->m = DIS_CLR;
+		else
+			v->m = CLR;
+	}
 	if (keycode == 124)
 		v->padx += 70.;
 	else if (keycode == 126)
