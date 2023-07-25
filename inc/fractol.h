@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 17:22:54 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:41:09 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <math.h>
 // MLX LIBRARY
 # include "../inc/mlx/mlx.h"
+// LIBRARY FOR EXIT();
+# include <stdlib.h>
 
 # define WW 1278
 # define HH 718
