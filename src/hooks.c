@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 02:43:37 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 02:49:00 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,7 @@ int	motion_hook(int x, int y, t_mlx *v)
 		&& v->num == 1 && v->m == CLR)
 	{
 		t = (((MXJ - MNJ) / ((double)(WW) - 0.0)) * ((double)(x) - 0.0)) + MNJ;
-		// v->jr = t;
 		z = (((MXJ - MNJ) / ((double)(WW) - 0.0)) * ((double)(y) - 0.0)) + MNJ;
-		// v->ji = z;
 		mlx_destroy_image(v->mlx, v->img);
 		mlx_clear_window(v->mlx, v->win);
 		expose_hook(v);
@@ -100,3 +98,7 @@ int	close_hook(int button, t_mlx *v)
 	exit(0);
 	return (0);
 }
+
+// Put this on line 62 if you want to update Julia JR with mouse motion
+		// v->jr = t;
+		// v->ji = z;

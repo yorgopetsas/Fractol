@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 02:41:41 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 02:47:55 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,3 @@ void	controls_two(t_mlx *v, int keycode)
 	else if (keycode == 125)
 		v->pady += 70.;
 }
-
-// v->m = (v->m == CLR) ? DIS_CLR : CLR;
