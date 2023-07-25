@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 04:39:50 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:26:58 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ void	yz_menu(t_mlx *v)
 	mlx_string_put(v->mlx, v->win, 1010, 183, CLR, "Zoom: Scroll");
 	mlx_string_put(v->mlx, v->win, 1010, 203, CLR, "Zoom: LMB / RMB");
 	mlx_string_put(v->mlx, v->win, 1010, 223, CLR, "Change Colors: Shift");
+	if (v->num == 1)
+		mlx_string_put(v->mlx, v->win, 1010, 263, CLR, "Update JULIA: + / - ");
+
 }
 
 void	yz_itr_frt(t_mlx *v)
@@ -44,7 +47,7 @@ void	yz_itr_frt(t_mlx *v)
 		v->x = -1;
 		while (++v->x < WW)
 		{
-			if (v->x > 1000 && v->x < 1250 && v->y > 10 && v->y < 280)
+			if (v->x > 1000 && v->x < 1250 && v->y > 10 && v->y < 300)
 				mlx_pixel_put(v->mlx, v->win, v->x, v->y, 0x00000000);
 			else if (v->num == 1)
 				fractal_julia(v);

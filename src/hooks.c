@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 13:02:27 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:27:02 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,3 @@ int	close_hook(int button, t_mlx *v)
 	exit(0);
 	return (0);
 }
-
-// Put this on line 62 if you want to update Julia JR with mouse motion
-		// v->jr = t;
-		// v->ji = z;

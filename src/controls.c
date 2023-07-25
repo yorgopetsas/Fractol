@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 13:08:27 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:27:02 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,3 @@ void	yz_controls_two(t_mlx *v, int keycode)
 		v->clr_v *= 1.2;
 	}
 }
-
-//  && (v->z > 10 || v->z < -10)
-	// if (keycode == 1 || keycode == 46)
-	// {
-	// 	if (v->m == CLR)
-	// 		v->m = DIS_CLR;
-	// 	else
-	// 		v->m = CLR;
-	// }
-	// else 

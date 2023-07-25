@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 13:04:53 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:27:04 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 # define MXJ -3.20
 # define MNJ 3.200
 # define CLR 0xC0C0C0
-# define DIS_CLR 0xC0C0C0
+// # define DIS_CLR 0xC0C0C0
 
 # define TITLE "Fractol (v1.0) by yzisis-p"
 # define INST "\nType \'./fractol\' followed by \'Julia\',\'Tricorn\' or \'Mandelbrot\'\n"
