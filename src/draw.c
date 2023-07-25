@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 04:18:59 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 04:39:50 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ void	yz_menu(t_mlx *v)
 	mlx_string_put(v->mlx, v->win, 1010, 163, CLR, "Mouse Controls:");
 	mlx_string_put(v->mlx, v->win, 1010, 183, CLR, "Zoom: Scroll");
 	mlx_string_put(v->mlx, v->win, 1010, 203, CLR, "Zoom: LMB / RMB");
-	// mlx_string_put(v->mlx, v->win, 1010, 143, CLR, "Mouse On/Off: M / S");
-	// mlx_string_put(v->mlx, v->win, 1010, 143, CLR, "Change Colors: Shift");
+	mlx_string_put(v->mlx, v->win, 1010, 223, CLR, "Change Colors: Shift");
 }
 
 void	yz_itr_frt(t_mlx *v)
