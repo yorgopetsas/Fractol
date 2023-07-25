@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 13:27:02 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 16:15:08 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	yz_controls(t_mlx *v, int keycode)
 {
 	if (keycode == 8)
 		yz_asgn(v);
-	else if (keycode == 12 && v->imax > 2)
+	else if (keycode == 12 && v->imax > 3)
 		v->imax -= 3.;
 	else if (keycode == 13)
 		v->imax += 3.;

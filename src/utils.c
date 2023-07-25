@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 15:53:26 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 16:15:05 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	yz_error(int type)
 	else if (type == 5)
 	{
 		write(2, INST5, ft_strlen(INST4));
-		write(2, INST, ft_strlen(INST));
+		write(2, INST3, ft_strlen(INST3));
 		return (5);
 	}
 	write(2, "\n", 1);
