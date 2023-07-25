@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 04:15:41 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 04:18:59 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void	yz_itr_frt(t_mlx *v)
 			else if (v->num == 1)
 				fractal_julia(v);
 			else if (v->num == 2)
+				fractal_mandelbrot(v);
+			else if (v->num == 3)
 				fractal_mandelbrot(v);
 		}
 	}

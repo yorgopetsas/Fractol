@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 04:15:56 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 04:25:09 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ int	yz_error(int type)
 {
 	if (type == 0)
 	{
-		write(2, INSTRC, ft_strlen(INSTRC));
-		write(2, INSTRC3, ft_strlen(INSTRC3));
+		write(2, INST, ft_strlen(INST));
+		write(2, INST3, ft_strlen(INST3));
 	}
 	else if (type == 2)
-		write(2, INSTRC2, ft_strlen(INSTRC2));
+		write(2, INST2, ft_strlen(INST2));
 	else if (type == 3)
 	{
-		write(2, INSTRC4, ft_strlen(INSTRC4));
-		write(2, INSTRC, ft_strlen(INSTRC));
-		write(2, INSTRC3, ft_strlen(INSTRC3));
+		write(2, INST4, ft_strlen(INST4));
+		write(2, INST, ft_strlen(INST));
+		write(2, INST3, ft_strlen(INST3));
 	}
 	write(2, "\n", 1);
 	return (-1);
@@ -43,6 +43,8 @@ int	yz_check(t_mlx *v, char **argv, int argc)
 	}
 	else if (ft_strcmp(argv[1], "Mandelbrot") == 0)
 		v->num = 2;
+	else if (ft_strcmp(argv[1], "Tri") == 0)
+		v->num = 3;
 	else
 		return (1);
 	return (0);
