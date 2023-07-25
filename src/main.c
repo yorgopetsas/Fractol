@@ -6,13 +6,13 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 01:40:42 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 02:35:32 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 
-static void	yz_asgn(t_mlx *d)
+void	yz_asgn(t_mlx *d)
 {
 	d->e = 0;
 	d->rot = 0;

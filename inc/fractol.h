@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 01:41:18 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 02:35:14 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 # define MH 360
 # define MXJ -3.20
 # define MNJ 3.200
-# define CLR 0xC1C1C1
+# define CLR 0xC0C0C0
 # define DIS_CLR 0xC0C0C0
 
 # define TITLE "Fractol (v1.0) by yzisis-p"
@@ -41,7 +41,6 @@
 
 typedef struct s_rgb
 {
-	int		num_colors;
 	double	hue;
 	double	saturation;
 	double	value;
@@ -92,7 +91,7 @@ typedef struct s_mlx
 }				t_mlx;
 
 void		mlx_int_str_to_wordtab(char *str);
-
+void		yz_asgn(t_mlx *d);
 void		yz_itr_frt(t_mlx *v);
 void		yz_menu(t_mlx *v);
 int			yz_error(int type);
@@ -117,7 +116,7 @@ void		rotate_fractal(t_mlx *v, int rot);
 
 void		controls(t_mlx *v, int keycode);
 void		controls_two(t_mlx *v, int keycode);
-void		reset_values(t_mlx *v);
+// void		reset_values(t_mlx *v);
 
 int			ft_strcmp(char *s1, char *s2);
 void		ft_cpy(char *s1, char *s2);

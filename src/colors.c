@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/25 01:41:15 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 02:33:31 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ int	yz_coloring(t_mlx *v)
 	t_rgb	clrz;
 	int		r;
 
-	clrz.num_colors = 40;
 	if (v->i >= v->imax)
 		return (0x000000);
 	clrz.hue = v->clr_h + (v->i * (360.0 / v->imax));
