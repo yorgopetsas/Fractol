@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 16:15:08 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:23:05 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	yz_controls_two(t_mlx *v, int keycode)
 {
 	if (keycode == 123)
 		v->padx -= 70.;
-
 	else if (keycode == 124)
 		v->padx += 70.;
 	else if (keycode == 126)

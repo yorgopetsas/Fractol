@@ -6,7 +6,7 @@
 #    By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/27 10:18:58 by yzisis-p          #+#    #+#              #
-#    Updated: 2023/07/20 01:26:35 by yzisis-p         ###   ########.fr        #
+#    Updated: 2023/07/25 17:24:05 by yzisis-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,9 +28,6 @@ STR_DIR =	src/
 # Header of fractol.h (funcitons)
 HEADER_FRAC =	inc/fractol.h
 
-# Headers of libtf
-# DIR_LIBFT =	libft/include
-
 # Headers of mlx
 DIR_MLX =	inc/mlx
 
@@ -38,9 +35,9 @@ DIR_MLX =	inc/mlx
 DIR_HEDS =	inc/
 
 # All the objects of startup
-OBJ_STR =	$(SRC:.c=.o)
+OBJ_STR = $(SRC:.c=.o)
 
-ALL_DEPS =$(SRC:.c=.d)
+ALL_DEPS = $(SRC:.c=.d)
 
 # Mlx libraries
 MLX =	inc/mlx/libmlx.a
@@ -77,7 +74,6 @@ DARK_GRAY =		\033[38;5;234m
 MID_GRAY =		\033[38;5;245m
 DARK_GREEN =	\033[38;2;75;179;82m
 DARK_YELLOW =	\033[38;5;143m
-
 
 #	----------------------------------------	ACTIONS
 all:
@@ -117,13 +113,11 @@ $(NAME) ::	$(OBJ_STR)
 				@printf "$(DEL_LINE)\r Compiling $@\n"
 				@$(GCC) $(FLAGS) $^ $(MINILIBXCC) $(OPENGL) -o $@
 
-	  -c $< -o $@
-
 $(NAME) ::
 				@printf "$(DEL_LINE)\r$(BOLD)$(DARK_GREEN)FRACTOL COMPILED ✅$(DEF_COLOR)\n"
 
 %.o :	%.c $(MKF)
-			@printf "$(DEL_LINE)\rcompiling fractol file:\t$@"
+			@printf "$(DEL_LINE)compiling fractol file:\t$@\n"
 			@$(GCC) $(FLAGS) -I$(DIR_HEDS) -c $< -o $@
 
 -include $(ALL_DEPS)

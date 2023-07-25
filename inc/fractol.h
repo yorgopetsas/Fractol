@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 16:15:10 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:22:54 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 # include <math.h>
 // MLX LIBRARY
 # include "../inc/mlx/mlx.h"
-// LIBRARY FOR MALLOC() AND ARGUMENTS PARSEMENT
-# include <stdlib.h>
 
 # define WW 1278
 # define HH 718
@@ -104,7 +102,6 @@ double		yz_calc_result(char *argv, int *decd, int decs, int sign);
 double		yz_countdown(double result2, int *decd);
 
 int			expose_hook(t_mlx *v);
-int			motion_hook(int x, int y, t_mlx *v);
 int			key_hook(int keycode, t_mlx *v);
 int			mouse_hook(int button, int x, int y, t_mlx *v);
 int			close_hook(int button, t_mlx *v);
@@ -114,7 +111,6 @@ void		fractal_mandelbrot(t_mlx *v);
 void		fractal_julia(t_mlx *v);
 
 int			ft_strcmp(char *s1, char *s2);
-void		ft_cpy(char *s1, char *s2);
 
 size_t		ft_strlen(const char *s);
 

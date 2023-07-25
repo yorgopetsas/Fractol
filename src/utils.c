@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 16:15:05 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:23:57 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,6 @@ size_t	ft_strlen(const char *s)
 		s++;
 	}
 	return (len);
-}
-
-void	ft_cpy(char *s1, char *s2)
-{
-	int	i;
-
-	i = -1;
-	while (s1[++i] != 0)
-		s2[i] = s1[i];
-	s2[i] = 0;
 }
 
 int	ft_strcmp(char *s1, char *s2)
