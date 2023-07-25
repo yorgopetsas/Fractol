@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/25 02:33:31 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 04:09:54 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,16 @@ int	yz_rgb_init(t_rgb clrz)
 {
 	int	result;
 
-	if (clrz.hue >= 0.0 && clrz.hue < 120.0) 
+	if (clrz.hue >= 0.0 && clrz.hue < 120.0)
 		yz_rgb_range(&clrz, clrz.c, clrz.c, 0.0);
-	else if (clrz.hue >= 60.0 && clrz.hue < 120.0)
+	else if (clrz.hue >= 60.0 && clrz.hue < 90.0)
 		yz_rgb_range(&clrz, clrz.x, clrz.c, 0.0);
-	else if (clrz.hue >= 120.0 && clrz.hue < 240.0)
+	else if (clrz.hue >= 90.0 && clrz.hue < 120.0)
+		yz_rgb_range(&clrz, (clrz.x * 1.1), (clrz.c * 1.1), 0.0);
+	else if (clrz.hue >= 120.0 && clrz.hue < 180.0)
 		yz_rgb_range(&clrz, 0.0, clrz.c, clrz.x);
+	else if (clrz.hue >= 180.0 && clrz.hue < 240.0)
+		yz_rgb_range(&clrz, 0.0, (clrz.c * 0.9), (clrz.x * 0.9));
 	else if (clrz.hue >= 180.0 && clrz.hue < 240.0)
 		yz_rgb_range(&clrz, 0.0, clrz.x, clrz.c);
 	else if (clrz.hue >= 240.0 && clrz.hue < 300.0)

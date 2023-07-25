@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 03:25:56 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 03:58:12 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 # define INSTRC "Please Type: \'./fractol Julia\' or \'./fractol Mandelbrot\'\n"
 # define INSTRC2 "Name Misspeld. Should be: \'Julia\' or \'Mandelbrot\'"
 # define INSTRC3 "For Julia you can specify the JR: \'./fractol Julia -1.55454\'"
-# define INSTRC4 "You have provided more then 3 arguments. Please try again.\n"
+# define INSTRC4 "You have provided more then 2 arguments. Please try again.\n"
 
 typedef struct s_rgb
 {
