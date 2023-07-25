@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 15:06:56 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 15:12:02 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,6 @@ int	yz_error(int type)
 
 int	yz_check(t_mlx *v, char **argv, int argc)
 {
-	ft_cpy("Julia\0", v->ftl[0]);
-	ft_cpy("Mandelbrot\0", v->ftl[1]);
-	ft_cpy("Tricorn\0", v->ftl[2]);
 	if (ft_strcmp(argv[1], "Julia") == 0)
 	{
 		if (argc == 3)

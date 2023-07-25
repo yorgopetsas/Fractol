@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 15:09:29 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 15:11:57 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ typedef struct s_mlx
 	int			num;
 	int			rot;
 	int			clr;
-	char		ftl[3][12];
 	float		minx;
 	float		miny;
 	double		i;
