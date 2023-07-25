@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/25 02:24:53 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 03:02:52 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void	yz_menu(t_mlx *v)
 void	yz_itr_frt(t_mlx *v)
 {
 	v->y = -1;
-	v->x = -1;
-	rotate_fractal(v, v->rot);
-	while (++v->y < HH && (v->x = -1) == -1)
+	yz_rotate_fractal(v, v->rot);
+	while (++v->y < HH)
 	{
+		v->x = -1;
 		while (++v->x < WW)
 		{
 			if (v->num == 1)

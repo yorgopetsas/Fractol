@@ -6,13 +6,41 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 13:09:02 by bsouchet          #+#    #+#             */
-/*   Updated: 2023/07/25 02:26:56 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 03:05:19 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 
-void	rotate_fractal(t_mlx *v, int rot)
+void	yz_rotate_fractal_two(t_mlx *v, int rot)
+{
+	if (rot == 0)
+	{
+		v->e = 0;
+		while (v->z < 0)
+			v->z = v->z * -1;
+	}
+	else if (rot == 90)
+	{
+		v->e = 1;
+		while (v->z < 0)
+			v->z = v->z * -1;
+	}
+	else if (rot == 180)
+	{
+		v->e = 2;
+		while (v->z > 0)
+			v->z = v->z * -1;
+	}
+	else if (rot == 270)
+	{
+		v->e = 3;
+		while (v->z > 0)
+			v->z = v->z * -1;
+	}
+}
+
+void	yz_rotate_fractal(t_mlx *v, int rot)
 {
 	if (rot >= 0)
 		while (rot >= 360)
@@ -20,18 +48,7 @@ void	rotate_fractal(t_mlx *v, int rot)
 	else
 		while (rot < -0)
 			rot += 360;
-	if (rot == 0 && (v->e = 0) == 0)
-		while (v->z < 0)
-			v->z = v->z * -1;
-	else if (rot == 90 && (v->e = 1) == 1)
-		while (v->z < 0)
-			v->z = v->z * -1;
-	else if (rot == 180 && (v->e = 2) == 2)
-		while (v->z > 0)
-			v->z = v->z * -1;
-	else if (rot == 270 && (v->e = 3) == 3)
-		while (v->z > 0)
-			v->z = v->z * -1;
+	yz_rotate_fractal_two(v, rot);
 	v->minx = ((MW + v->padx) / (v->z / 2)) / -2;
 	v->miny = ((MH + v->pady) / (v->z / 2)) / -2;
 }

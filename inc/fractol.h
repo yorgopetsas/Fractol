@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 02:35:14 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 03:05:04 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,19 +90,19 @@ typedef struct s_mlx
 	double		njr;
 }				t_mlx;
 
+int			yz_check_sign(char *argv);
+int			yz_coloring(t_mlx *v);
+int			yz_error(int type);
+int			yz_check(t_mlx *v, char **av);
+
 void		mlx_int_str_to_wordtab(char *str);
 void		yz_asgn(t_mlx *d);
 void		yz_itr_frt(t_mlx *v);
 void		yz_menu(t_mlx *v);
-int			yz_error(int type);
-int			yz_check(t_mlx *v, char **av);
 
 double		yz_string_double(char *argv);
 double		yz_calc_result(char *argv, int *decd, int decs, int sign);
 double		yz_countdown(double result2, int *decd);
-int			yz_check_sign(char *argv);
-
-int			yz_coloring(t_mlx *v);
 
 int			expose_hook(t_mlx *v);
 int			motion_hook(int x, int y, t_mlx *v);
@@ -110,13 +110,12 @@ int			key_hook(int keycode, t_mlx *v);
 int			mouse_hook(int button, int x, int y, t_mlx *v);
 int			close_hook(int button, t_mlx *v);
 
+void		yz_rotate_fractal(t_mlx *v, int rot);
 void		fractal_mandelbrot(t_mlx *v);
 void		fractal_julia(t_mlx *v);
-void		rotate_fractal(t_mlx *v, int rot);
 
 void		controls(t_mlx *v, int keycode);
 void		controls_two(t_mlx *v, int keycode);
-// void		reset_values(t_mlx *v);
 
 int			ft_strcmp(char *s1, char *s2);
 void		ft_cpy(char *s1, char *s2);
@@ -124,6 +123,3 @@ void		ft_cpy(char *s1, char *s2);
 size_t		ft_strlen(const char *s);
 
 #endif
-
-// int			ft_rand(int min, int max);
-// void		yz_mlx_pixel_put(t_mlx *data, int x, int y, int color);
