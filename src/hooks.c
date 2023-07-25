@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 12:57:40 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:02:27 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ int	key_hook(int keycode, t_mlx *v)
 	else
 	{
 		if (keycode >= 1 && keycode <= 82 && ++r > 0)
-			controls(v, keycode);
+			yz_controls(v, keycode);
 		else if (keycode >= 83 && keycode <= 258 && ++r > 0)
-			controls_two(v, keycode);
+			yz_controls_two(v, keycode);
 		if (r > 0)
 		{
 			mlx_destroy_image(v->mlx, v->img);

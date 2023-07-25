@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 04:23:28 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:04:53 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include "../inc/mlx/mlx.h"
 // LIBRARY FOR MALLOC() AND ARGUMENTS PARSEMENT
 # include <stdlib.h>
-# include <stdio.h>
+// # include <stdio.h>
 
 # define WW 1278
 # define HH 718
@@ -33,10 +33,10 @@
 # define DIS_CLR 0xC0C0C0
 
 # define TITLE "Fractol (v1.0) by yzisis-p"
-# define INST "Type:./fractol Julia, ./fractol Tricorn or ./fractol Mandelbrot\n"
-# define INST2 "Name Misspeld. Should be: \'Julia\', \'Tricorn\' or \'Mandelbrot\'"
-# define INST3 "For Julia you can specify the JR: \'./fractol Julia -1.55454\'"
-# define INST4 "You have provided more then 2 arguments. Please try again.\n"
+# define INST "\nType \'./fractol\' followed by \'Julia\',\'Tricorn\' or \'Mandelbrot\'\n"
+# define INST2 "\nName Misspeld. Should be: \'Julia\', \'Tricorn\' or \'Mandelbrot\'\n"
+# define INST3 "\nJulia: Specify the JR. Example: \'./fractol Julia -1.55454\'"
+# define INST4 "\nYou have provided more then 2 arguments. Please try again."
 
 typedef struct s_rgb
 {
@@ -89,15 +89,17 @@ typedef struct s_mlx
 	double		njr;
 }				t_mlx;
 
-int			yz_check_sign(char *argv);
-int			yz_coloring(t_mlx *v);
 int			yz_error(int type);
 int			yz_check(t_mlx *v, char **argv, int argc);
+int			yz_check_sign(char *argv);
+int			yz_coloring(t_mlx *v);
 
-void		mlx_int_str_to_wordtab(char *str);
 void		yz_asgn(t_mlx *d);
 void		yz_itr_frt(t_mlx *v);
 void		yz_menu(t_mlx *v);
+void		yz_rotate_fractal(t_mlx *v, int rot);
+void		yz_controls(t_mlx *v, int keycode);
+void		yz_controls_two(t_mlx *v, int keycode);
 
 double		yz_string_double(char *argv);
 double		yz_calc_result(char *argv, int *decd, int decs, int sign);
@@ -109,12 +111,9 @@ int			key_hook(int keycode, t_mlx *v);
 int			mouse_hook(int button, int x, int y, t_mlx *v);
 int			close_hook(int button, t_mlx *v);
 
-void		yz_rotate_fractal(t_mlx *v, int rot);
+void		mlx_int_str_to_wordtab(char *str);
 void		fractal_mandelbrot(t_mlx *v);
 void		fractal_julia(t_mlx *v);
-
-void		controls(t_mlx *v, int keycode);
-void		controls_two(t_mlx *v, int keycode);
 
 int			ft_strcmp(char *s1, char *s2);
 void		ft_cpy(char *s1, char *s2);

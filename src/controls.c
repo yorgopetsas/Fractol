@@ -6,13 +6,13 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 12:56:41 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:08:27 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
 
-void	controls(t_mlx *v, int keycode)
+void	yz_controls(t_mlx *v, int keycode)
 {
 	if (keycode == 8)
 		yz_asgn(v);
@@ -34,9 +34,13 @@ void	controls(t_mlx *v, int keycode)
 		v->z -= (v->z * 0.30);
 		v->imax -= 2.;
 	}
+	else if (keycode == 69)
+		v->jr = v->jr * 1.01;
+	else if (keycode == 78)
+		v->jr = v->jr / 1.01;
 }
 
-void	controls_two(t_mlx *v, int keycode)
+void	yz_controls_two(t_mlx *v, int keycode)
 {
 	if (keycode == 123)
 		v->padx -= 70.;
