@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 15:11:57 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 15:53:21 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@
 # define INST2 "\nName Misspeld. Should be: \'Julia\', \'Tricorn\' or \'Mandelbrot\'\n"
 # define INST3 "\nJulia: Specify the JR. Example: \'./fractol Julia -1.55454\'"
 # define INST4 "\nToo many arguments provided. Please try again."
+# define INST5 "\nArguments not valid. Please provide a number\n."
 
 typedef struct s_rgb
 {

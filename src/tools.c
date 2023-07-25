@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 16:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 13:27:04 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 15:56:43 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ double	yz_calc_result(char *argv, int *decd, int decs, int sign)
 			else
 				result = result * 10 + (*argv - '0');
 		}
-		else if (*argv == '.' || *argv == ',' )
-			decs = 1;
+		else if ((*argv == '.' || *argv == ',') && decs == 0)
+			decs += 1;
 		else
-			break ;
+			return (5);
 		argv++;
 	}
 	result = yz_countdown(result, decd);
@@ -78,5 +78,7 @@ double	yz_string_double(char *argv)
 	sign = 1;
 	sign = yz_check_sign(argv);
 	result = yz_calc_result(argv, decd, decs, sign);
+	if (result == 5)
+		return (5);
 	return (result * sign);
 }

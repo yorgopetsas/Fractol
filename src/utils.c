@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 15:12:02 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 15:53:26 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ int	yz_error(int type)
 		write(2, INST, ft_strlen(INST));
 		write(2, INST3, ft_strlen(INST3));
 	}
+	else if (type == 5)
+	{
+		write(2, INST5, ft_strlen(INST4));
+		write(2, INST, ft_strlen(INST));
+		return (5);
+	}
 	write(2, "\n", 1);
 	return (-1);
 }
@@ -39,7 +45,11 @@ int	yz_check(t_mlx *v, char **argv, int argc)
 	if (ft_strcmp(argv[1], "Julia") == 0)
 	{
 		if (argc == 3)
+		{
 			v->njr = yz_string_double(argv[2]);
+			if (v->njr == 5)
+				return (5);
+		}
 		v->num = 1;
 	}
 	else if (ft_strcmp(argv[1], "Mandelbrot") == 0)
