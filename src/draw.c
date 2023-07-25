@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 13:26:58 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 14:43:20 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ void	yz_menu(t_mlx *v)
 
 	if (v->num == 1)
 		ttl = "Fractal: Julia";
-	else
+	else if (v->num == 2)
 		ttl = "Fractal: Mandelbrot";
+	else
+		ttl = "Fractal: Tricorn";
 	mlx_string_put(v->mlx, v->win, 1010, 15, CLR, ttl);
 	mlx_string_put(v->mlx, v->win, 1010, 15, CLR, ttl);
 	mlx_string_put(v->mlx, v->win, 1010, 43, CLR, "Actions:");
@@ -35,7 +37,6 @@ void	yz_menu(t_mlx *v)
 	mlx_string_put(v->mlx, v->win, 1010, 223, CLR, "Change Colors: Shift");
 	if (v->num == 1)
 		mlx_string_put(v->mlx, v->win, 1010, 263, CLR, "Update JULIA: + / - ");
-
 }
 
 void	yz_itr_frt(t_mlx *v)

@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 13:27:04 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 15:09:29 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # include "../inc/mlx/mlx.h"
 // LIBRARY FOR MALLOC() AND ARGUMENTS PARSEMENT
 # include <stdlib.h>
-// # include <stdio.h>
 
 # define WW 1278
 # define HH 718
@@ -30,13 +29,12 @@
 # define MXJ -3.20
 # define MNJ 3.200
 # define CLR 0xC0C0C0
-// # define DIS_CLR 0xC0C0C0
 
 # define TITLE "Fractol (v1.0) by yzisis-p"
 # define INST "\nType \'./fractol\' followed by \'Julia\',\'Tricorn\' or \'Mandelbrot\'\n"
 # define INST2 "\nName Misspeld. Should be: \'Julia\', \'Tricorn\' or \'Mandelbrot\'\n"
 # define INST3 "\nJulia: Specify the JR. Example: \'./fractol Julia -1.55454\'"
-# define INST4 "\nYou have provided more then 2 arguments. Please try again."
+# define INST4 "\nToo many arguments provided. Please try again."
 
 typedef struct s_rgb
 {

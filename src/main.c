@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 13:27:00 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 15:07:13 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,15 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (yz_error(0));
+	else if (argc == 2 && yz_check(&mx, argv, argc) > 0)
+		return (yz_error(2));
+	else if (argc == 3 && yz_check(&mx, argv, argc) > 0)
+		yz_error(3);
 	else if (argc > 3)
 		yz_error(3);
-	else if (yz_check(&mx, argv, argc) > 0)
-		return (yz_error(2));
 	else
 		init_win(&mx);
 	return (0);
 }
+
+	
