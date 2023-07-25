@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 03:05:04 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 03:25:56 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 
-// LIBRARY for strlen
-# include <string.h>
-
 # define WW 1278
 # define HH 718
 # define MW 640
@@ -36,8 +33,10 @@
 # define DIS_CLR 0xC0C0C0
 
 # define TITLE "Fractol (v1.0) by yzisis-p"
-# define INSTRC "Please Type: \'./fractol Julia\' or \'./fractol Mandelbrot\'"
+# define INSTRC "Please Type: \'./fractol Julia\' or \'./fractol Mandelbrot\'\n"
 # define INSTRC2 "Name Misspeld. Should be: \'Julia\' or \'Mandelbrot\'"
+# define INSTRC3 "For Julia you can specify the JR: \'./fractol Julia -1.55454\'"
+# define INSTRC4 "You have provided more then 3 arguments. Please try again.\n"
 
 typedef struct s_rgb
 {
@@ -93,7 +92,7 @@ typedef struct s_mlx
 int			yz_check_sign(char *argv);
 int			yz_coloring(t_mlx *v);
 int			yz_error(int type);
-int			yz_check(t_mlx *v, char **av);
+int			yz_check(t_mlx *v, char **argv, int argc);
 
 void		mlx_int_str_to_wordtab(char *str);
 void		yz_asgn(t_mlx *d);

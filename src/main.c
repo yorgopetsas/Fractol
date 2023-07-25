@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 02:35:32 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 03:23:54 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,11 @@ int	main(int argc, char **argv)
 {
 	t_mlx			mx;
 
-	if (argc == 3)
-		mx.njr = yz_string_double(argv[2]);
 	if (argc < 2)
 		return (yz_error(0));
-	else if (yz_check(&mx, argv) > 0)
+	else if (argc > 3)
+		yz_error(3);
+	else if (yz_check(&mx, argv, argc) > 0)
 		return (yz_error(2));
 	else
 		init_win(&mx);
