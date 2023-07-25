@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 04:25:09 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/25 04:25:57 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	yz_check(t_mlx *v, char **argv, int argc)
 	}
 	else if (ft_strcmp(argv[1], "Mandelbrot") == 0)
 		v->num = 2;
-	else if (ft_strcmp(argv[1], "Tri") == 0)
+	else if (ft_strcmp(argv[1], "Tricorn") == 0)
 		v->num = 3;
 	else
 		return (1);
