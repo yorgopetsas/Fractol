@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:14:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 17:23:30 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/26 14:49:06 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	expose_hook(t_mlx *v)
 {
 	v->img = mlx_new_image(v->mlx, WW, HH);
 	v->addr = mlx_get_data_addr(v->img, &v->bpp, &v->sl, &v->end);
-	mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
 	yz_itr_frt(v);
+	mlx_put_image_to_window(v->mlx, v->win, v->img, 0, 0);
 	yz_menu(v);
 	return (0);
 }

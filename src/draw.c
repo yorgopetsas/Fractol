@@ -6,11 +6,31 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/02 18:39:52 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 17:23:08 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/26 14:57:43 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/fractol.h"
+
+int	yz_put_pixel(t_mlx *v, int type)
+{
+	int		i;
+	int		x;
+	int		y;
+	char	*rgb;
+
+	x = v->x;
+	y = v->y;
+	if ((type != 1 && x >= 0) && x < WW && y < HH)
+	{
+		i = ((int)v->x * (v->bpp / 8)) + ((int)v->y * v->sl);
+		rgb = (char *)&v->clr;
+		v->addr[i] = rgb[0];
+		v->addr[++i] = rgb[1];
+		v->addr[++i] = rgb[2];
+	}
+	return (0);
+}
 
 void	yz_menu(t_mlx *v)
 {

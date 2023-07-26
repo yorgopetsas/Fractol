@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 10:24:58 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 17:41:09 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/26 14:52:18 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ void		yz_menu(t_mlx *v);
 void		yz_rotate_fractal(t_mlx *v, int rot);
 void		yz_controls(t_mlx *v, int keycode);
 void		yz_controls_two(t_mlx *v, int keycode);
+int			yz_put_pixel(t_mlx *v, int type);
 
 double		yz_string_double(char *argv);
 double		yz_calc_result(char *argv, int *decd, int decs, int sign);

@@ -6,7 +6,7 @@
 /*   By: yzisis-p <yzisis-p@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/19 13:09:02 by yzisis-p          #+#    #+#             */
-/*   Updated: 2023/07/25 17:23:24 by yzisis-p         ###   ########.fr       */
+/*   Updated: 2023/07/26 14:55:42 by yzisis-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	fractal_julia(t_mlx *v)
 		v->zi = v->mod * v->zi * v->tmp + v->ji;
 	}
 	v->clr = yz_coloring(v);
-	mlx_pixel_put(v->mlx, v->win, v->x, v->y, v->clr);
+	yz_put_pixel(v, 0);
 }
 
 void	fractal_mandelbrot(t_mlx *v)
@@ -99,5 +99,5 @@ void	fractal_mandelbrot(t_mlx *v)
 		v->zi = v->mod * v->zi * v->tmp + v->mi;
 	}
 	v->clr = yz_coloring(v);
-	mlx_pixel_put(v->mlx, v->win, v->x, v->y, v->clr);
+	yz_put_pixel(v, 0);
 }
